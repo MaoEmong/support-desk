@@ -1,0 +1,28 @@
+{
+  "database": "support_window1_1792623138522_e2e",
+  "records": [
+    {
+      "phase": "new_owned_database",
+      "name": "support_window1_1792623138522_e2e",
+      "sharedDatabaseTouched": false
+    },
+    {
+      "process": "scoped-tests",
+      "pid": 15648,
+      "exit": 0,
+      "signal": null
+    },
+    {
+      "process": "dev",
+      "pid": 41848,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "phase": "owned_database_cleanup",
+      "name": "support_window1_1792623138522_e2e",
+      "connections": 0,
+      "dropped": true
+    }
+  ]
+}

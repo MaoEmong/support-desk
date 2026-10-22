@@ -1,0 +1,76 @@
+{
+  "tenantSlug": "mailpulse",
+  "displayName": "메일펄스",
+  "settings": {
+    "botName": "메일펄스 서포트",
+    "systemPrompt": "이메일·문자 마케팅 자동화 SaaS '메일펄스'의 고객지원입니다. 고객은 마케터와 개발자입니다. 간결하고 전문적인 말투로, 메뉴 경로는 '설정 > 발신 도메인'처럼 정확히 적습니다. 결제·환불·계정 보안은 확인 절차만 안내합니다.",
+    "threshold": 0.7,
+    "forbiddenCategories": ["refund", "account_security"],
+    "approvalMode": false,
+    "fallbackCategory": "other",
+    "allowedLinkDomains": ["docs.mailpulse.example", "mailpulse.example"],
+    "autoAnswerLimit": 1,
+    "categories": [
+      {
+        "id": "refund",
+        "label": "환불",
+        "description": "이용료 환불, 청구·결제 취소, 중복 청구",
+        "keywords": ["환불", "돈돌려", "돌려주", "돌려줘", "청구취소", "결제취소", "취소해", "중복결제", "이중결제", "두번결제", "중복청구"]
+      },
+      {
+        "id": "account_security",
+        "label": "계정 보안",
+        "description": "비밀번호 재설정, 계정 도용, 모르는 로그인, 2단계 인증 복구",
+        "keywords": ["다른사람이로그인", "모르는로그인", "모르는사람", "도용", "해킹", "2단계", "otp", "인증풀", "비밀번호", "재설정", "탈취"]
+      },
+      {
+        "id": "billing",
+        "label": "요금제·청구",
+        "description": "요금제 비교, 청구서, 발송 한도와 사용량",
+        "keywords": ["요금제", "청구서", "요금", "플랜", "결제수단", "발송한도", "한도", "사용량", "구독", "인보이스", "세금계산서"]
+      },
+      {
+        "id": "campaign",
+        "label": "캠페인",
+        "description": "캠페인 생성, 예약 발송, 세그먼트·대상 설정",
+        "keywords": ["캠페인", "예약", "세그먼트", "묶고", "그룹", "템플릿", "대상고객"]
+      },
+      {
+        "id": "integration",
+        "label": "API·연동",
+        "description": "API 키, 호출 제한, 쇼핑몰·웹훅 연동",
+        "keywords": ["api", "연동", "쇼핑몰", "연결", "웹훅", "429", "sdk", "키발급"]
+      },
+      {
+        "id": "delivery_failure",
+        "label": "발송 실패",
+        "description": "반송, 문자 발송 실패, 발신 도메인 인증",
+        "keywords": ["반송", "발송실패", "실패", "바운스", "발신도메인", "도메인인증", "spf", "dkim", "스팸함"]
+      },
+      {
+        "id": "report",
+        "label": "리포트·통계",
+        "description": "열람률·클릭률 기준, 통계 갱신, 리포트 내보내기",
+        "keywords": ["리포트", "통계", "열람률", "오픈율", "클릭률", "보고서", "내보내기", "파일로"]
+      },
+      {
+        "id": "compliance",
+        "label": "수신거부·광고 규정",
+        "description": "수신 거부, 수신 동의 기록, 광고성 정보 표기, 스팸 신고",
+        "keywords": ["수신거부", "수신동의", "광고성", "스팸신고", "080", "야간발송", "동의기록"]
+      },
+      {
+        "id": "feature_request",
+        "label": "기능 제안",
+        "description": "새 기능 제안과 진행 상황",
+        "keywords": ["기능제안", "제안", "기능요청", "추가해주", "있으면좋겠"]
+      },
+      {
+        "id": "other",
+        "label": "기타",
+        "description": "분류할 수 없거나 서비스와 무관한 문의",
+        "keywords": []
+      }
+    ]
+  }
+}

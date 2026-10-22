@@ -1,0 +1,72 @@
+{
+  "tenantSlug": "pixelforge",
+  "version": 1,
+  "cases": [
+    {
+      "key": "faq_install",
+      "channel": "ticket",
+      "title": "PC 권장 사양 문의",
+      "message": "PC로 하려면 사양이 얼마나 필요해요?",
+      "expected": { "decision": "auto_answer", "reason": "confident_kb_match", "category": "install", "confidence": 0.865 },
+      "notes": "시나리오 1: 근거(pf-kb-001)가 붙은 자동답변 → 고객 해결 확인"
+    },
+    {
+      "key": "refund_escalate",
+      "channel": "ticket",
+      "title": "패키지 환불 요청",
+      "message": "어제 산 패키지 환불 가능해요?",
+      "expected": { "decision": "escalate", "reason": "forbidden_category", "category": "refund", "confidence": 0.781 },
+      "notes": "시나리오 2: 금지 카테고리 이관 → 상담원이 초안 수정·승인"
+    },
+    {
+      "key": "hacking_escalate",
+      "channel": "ticket",
+      "title": "계정 도용 신고",
+      "message": "누가 제 계정 털어감. 지금도 접속 중이에요.",
+      "expected": { "decision": "escalate", "reason": "forbidden_category", "category": "hacking", "confidence": 0.865 },
+      "notes": "시연 시드: 해킹 이관"
+    },
+    {
+      "key": "sanction_escalate",
+      "channel": "ticket",
+      "title": "이용 정지 이의신청",
+      "message": "밴 먹었어요. 정지 풀어주세요.",
+      "expected": { "decision": "escalate", "reason": "forbidden_category", "category": "sanction", "confidence": 0.796 },
+      "notes": "시연 시드: 제재 이관"
+    },
+    {
+      "key": "approval_pending",
+      "channel": "ticket",
+      "title": "원정대 이벤트 보상 수령",
+      "message": "원정대 이벤트 보상은 어디서 받나요?",
+      "settingsOverride": { "approvalMode": true },
+      "expected": { "decision": "pending_approval", "reason": "approval_mode", "category": "event", "confidence": 0.978 },
+      "notes": "시나리오 4: 승인 모드를 켠 뒤 접수하면 미승인 답변은 고객에게 보이지 않는다(승인 모드 꺼짐이면 auto_answer)"
+    },
+    {
+      "key": "chat_faq",
+      "channel": "chat",
+      "title": "접속 끊김 문의",
+      "message": "게임하다 자꾸 접속이 끊겨요.",
+      "expected": { "decision": "auto_answer", "reason": "confident_kb_match", "category": "bug", "confidence": 0.933 },
+      "notes": "시나리오 3: 챗봇 스트리밍 답변(token 이 나간다)"
+    },
+    {
+      "key": "chat_hacking",
+      "channel": "chat",
+      "title": "아이템 도난 신고",
+      "message": "모르는 사람이 아이템 다 가져갔어요. 복구해줘요.",
+      "expected": { "decision": "escalate", "reason": "forbidden_category", "category": "hacking", "confidence": 0.821 },
+      "notes": "시나리오 3: token 없이 escalated → '문의글로 남기기'로 티켓 1건 생성"
+    },
+    {
+      "key": "threshold_boundary",
+      "channel": "ticket",
+      "title": "구매 내역 확인 방법",
+      "message": "구매 내역 어디서 보는지 알려주세요.",
+      "expected": { "decision": "auto_answer", "reason": "confident_kb_match", "category": "payment", "confidence": 0.818 },
+      "thresholdProbe": { "threshold": 0.85, "decision": "escalate", "reason": "low_confidence" },
+      "notes": "시나리오 5: 기본 임계값 0.7 에서는 자동답변, 관리자가 0.85 로 올리면 같은 문장이 이관된다(faq_install 0.865 는 0.85 에서도 자동답변)"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "database": "support_window4_1792628504822_e2e",
+  "records": [
+    {
+      "phase": "fresh_migrate_seed",
+      "migrations": [
+        "0000_initial.sql",
+        "0001_union_contract.sql",
+        "0002_final_names.sql",
+        "0003_message_contract.sql",
+        "0004_audit_target_text.sql",
+        "0005_deferred_draft_message_links.sql",
+        "0006_stage2_settings_kb.sql",
+        "0007_conversation_notices.sql",
+        "0008_sse_runs_drafts_kb_revision.sql",
+        "0009_final_settings_policy.sql",
+        "0010_draft_source_contract.sql",
+        "0011_threshold_double_precision.sql",
+        "0012_demo_brand_colors.sql",
+        "0013_ai_runs_source_contract.sql"
+      ],
+      "users": [
+        {
+          "role": "agent",
+          "count": 2
+        },
+        {
+          "role": "customer",
+          "count": 4
+        },
+        {
+          "role": "platform_admin",
+          "count": 1
+        },
+        {
+          "role": "tenant_admin",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "command": "pnpm test",
+      "exit": 0
+    },
+    {
+      "command": "pnpm typecheck",
+      "exit": 0
+    },
+    {
+      "command": "pnpm lint",
+      "exit": 0
+    },
+    {
+      "phase": "owned_runtime",
+      "processes": [
+        {
+          "pid": 19212,
+          "parentPid": 19700,
+          "role": "owned-child"
+        },
+        {
+          "pid": 23988,
+          "parentPid": 19212,
+          "role": "owned-child"
+        },
+        {
+          "pid": 40708,
+          "parentPid": 19212,
+          "role": "root-dev-wrapper"
+        },
+        {
+          "pid": 24200,
+          "parentPid": 40708,
+          "role": "root-dev-wrapper"
+        },
+        {
+          "pid": 46428,
+          "parentPid": 24200,
+          "role": "owned-child"
+        },
+        {
+          "pid": 29256,
+          "parentPid": 24200,
+          "role": "owned-child"
+        },
+        {
+          "pid": 33380,
+          "parentPid": 29256,
+          "role": "root-worker-wrapper"
+        },
+        {
+          "pid": 20520,
+          "parentPid": 33380,
+          "role": "root-worker-wrapper"
+        },
+        {
+          "pid": 41544,
+          "parentPid": 46428,
+          "role": "next"
+        },
+        {
+          "pid": 34144,
+          "parentPid": 41544,
+          "role": "next"
+        },
+        {
+          "pid": 8956,
+          "parentPid": 20520,
+          "role": "owned-child"
+        },
+        {
+          "pid": 47428,
+          "parentPid": 8956,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 9608,
+          "parentPid": 47428,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 34240,
+          "parentPid": 9608,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 22860,
+          "parentPid": 34144,
+          "role": "next"
+        }
+      ],
+      "listeners": [
+        22860
+      ]
+    },
+    {
+      "caseKey": "faq_install",
+      "override": {},
+      "autoAnswerCount": 0,
+      "jobId": "c7ceb04a-5a84-495f-99fe-e7eaf25fca02",
+      "ticketId": "cc0fdbc5-8eef-4943-a04a-b603a2a02a7b",
+      "decision": "auto_answer",
+      "reason": "confident_kb_match",
+      "category": "install",
+      "confidence": 0.865,
+      "publicReplies": 1
+    },
+    {
+      "caseKey": "follow_up_after_auto_answer",
+      "ticketId": "cc0fdbc5-8eef-4943-a04a-b603a2a02a7b",
+      "publicReplies": 1,
+      "escalated": true
+    },
+    {
+      "caseKey": "faq_install",
+      "override": {
+        "approvalMode": true
+      },
+      "autoAnswerCount": 0,
+      "ticketId": "4592fc0c-856e-4e7f-ba6f-80ce7d7a5e2d",
+      "jobId": "82a88513-575e-4ef0-8f74-e952adfbbcde",
+      "decision": "pending_approval",
+      "reason": "approval_mode",
+      "category": "install",
+      "confidence": 0.865,
+      "draftCount": 1,
+      "customerDraftVisible": false
+    },
+    {
+      "caseKey": "permanent_config_error",
+      "jobId": "d1deda7b-38ba-4bff-8bd6-634ee4d4c403",
+      "attempts": 1,
+      "confidence": 0,
+      "nullDraft": true,
+      "draftCount": 0,
+      "publicReplies": 0
+    },
+    {
+      "caseKey": "http_sse_auto_answer",
+      "eventOrder": [
+        "classified",
+        "sources",
+        "token",
+        "token",
+        "token",
+        "token",
+        "token",
+        "token",
+        "done"
+      ],
+      "conversationId": "6da5163a-bf8e-46ac-8c20-281de1690426",
+      "savedAssistant": 1
+    },
+    {
+      "caseKey": "agents_pg_http",
+      "agentId": "7f941b5d-d2e0-48db-80a8-068bbfe43a98",
+      "createStatus": 201,
+      "duplicateStatus": 409,
+      "disabled": true,
+      "passwordLogged": false
+    },
+    {
+      "phase": "dev_exit",
+      "exit": 1,
+      "signal": null,
+      "osSigtermVerified": false
+    },
+    {
+      "phase": "runtime_cleanup",
+      "survivors": [],
+      "listeners": []
+    },
+    {
+      "phase": "database_cleanup",
+      "name": "support_window4_1792628504822_e2e",
+      "activeConnections": 0,
+      "droppedOnlyOwned": true
+    }
+  ]
+}

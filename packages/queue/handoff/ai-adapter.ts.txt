@@ -1,0 +1,57 @@
+import { maskDeep, processInquiry, type AIRunResult as ProviderResult, type PipelineDeps } from '@support/ai';
+import { ProcessorFailure, type AIRunResult, type Inquiry, type ProcessInquiry } from './index.js';
+
+export interface AIAdapterOptions {
+  /** Tenant-scoped latest customer message for explicitly requested regeneration. */
+  resolveRegenerationMessageId?: (input: Inquiry) => Promise<string | null>;
+}
+
+/** Persist every provider field in aiResult; flattened fields serve SQL/KPI queries.
+ * The complete provider JSON is retained after deep PII masking, never logged raw. */
+export function adaptAIResult(input: Inquiry, raw: ProviderResult): AIRunResult {
+  if (raw.tenantId !== input.tenantId || raw.ticketId !== input.ticketId || raw.conversationId) {
+    throw new ProcessorFailure('ai_identity_mismatch', undefined, true);
+  }
+  const allSources = [...raw.sources, ...(raw.draft?.sources ?? [])];
+  if (allSources.some(source => source.tenantId !== input.tenantId)) {
+    // Never persist or publish another tenant's source content, even inside JSON.
+    throw new ProcessorFailure('tenant_source_mismatch', undefined, true);
+  }
+  const safe = maskDeep(raw);
+  const result: AIRunResult = {
+    aiResult: safe,
+    body: safe.draft?.body ?? '',
+    action: safe.decision === 'auto_answer' && safe.draft?.customerVisible && !safe.error ? 'reply' : 'draft',
+    decision: safe.decision,
+    reason: safe.reason,
+    category: safe.classification?.category ?? null,
+    urgency: safe.classification?.urgency ?? null,
+    sentiment: safe.classification?.sentiment ?? null,
+    confidence: safe.confidence.final,
+    sources: safe.sources,
+    model: safe.draft?.model ?? safe.usage.at(-1)?.model ?? null,
+    inputTokens: safe.usage.reduce((sum, usage) => sum + usage.inputTokens, 0),
+    outputTokens: safe.usage.reduce((sum, usage) => sum + usage.outputTokens, 0),
+    latencyMs: Math.round(safe.timing.totalMs),
+    error: safe.error ? JSON.stringify(safe.error) : null,
+    pipelineVersion: safe.pipelineVersion,
+    messageId: safe.messageId,
+  };
+  if (safe.error) {
+    const transient = ['PROVIDER_ERROR', 'INTERNAL'].includes(safe.error.code);
+    throw new ProcessorFailure(`ai_${safe.error.code.toLowerCase()}`, result, !transient);
+  }
+  return result;
+}
+
+/** The real @support/ai pipeline is called only here. The web-owned deps factory
+ * supplies published tenant KB/settings/inquiry readers; queue never imports web. */
+export function createAIProcessor(deps: PipelineDeps, options: AIAdapterOptions = {}): ProcessInquiry {
+  return async input => {
+    if (!input.ticketId || input.conversationId) throw new ProcessorFailure('worker_ticket_only', undefined, true);
+    const messageId = input.messageId ?? await options.resolveRegenerationMessageId?.(input);
+    if (!messageId) throw new ProcessorFailure('inquiry_message_missing', undefined, true);
+    const result = await processInquiry({ tenantId: input.tenantId, ticketId: input.ticketId, messageId }, deps);
+    return adaptAIResult(input, result);
+  };
+}

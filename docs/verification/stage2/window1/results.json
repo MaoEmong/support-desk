@@ -1,0 +1,131 @@
+{
+  "database": "support_window1_1792623379811_e2e",
+  "records": [
+    {
+      "phase": "new_owned_database",
+      "name": "support_window1_1792623379811_e2e",
+      "sharedDatabaseTouched": false
+    },
+    {
+      "phase": "scoped_tests_not_repeated",
+      "priorEvidence": "attempt2/scoped-tests.log",
+      "priorPass": 45,
+      "currentPassClaim": false
+    },
+    {
+      "phase": "real_bootstrap_queue_claim",
+      "result": "pass"
+    },
+    {
+      "phase": "root_dev_ready",
+      "port": 1871,
+      "pid": 31468,
+      "database": "support_window1_1792623379811_e2e"
+    },
+    {
+      "caseKey": "faq_install",
+      "override": {},
+      "autoAnswerCount": 0,
+      "jobId": "7d75aacc-50fa-486d-8de7-0bc2ab4ac81d",
+      "ticketId": "48a19d0d-8cee-4a08-84e5-8a5d4300e5df",
+      "decision": "auto_answer",
+      "reason": "confident_kb_match",
+      "category": "install",
+      "confidence": 0.865,
+      "publicReplies": 1
+    },
+    {
+      "caseKey": "follow_up_after_auto_answer",
+      "ticketId": "48a19d0d-8cee-4a08-84e5-8a5d4300e5df",
+      "publicReplies": 1,
+      "escalated": true
+    },
+    {
+      "caseKey": "faq_install",
+      "override": {
+        "approvalMode": true
+      },
+      "autoAnswerCount": 0,
+      "ticketId": "ed3fa371-0cc1-4dd7-8a61-8a108b88e6d6",
+      "jobId": "1a822e1f-c321-4fcc-8f47-1c243839f920",
+      "decision": "pending_approval",
+      "reason": "approval_mode",
+      "category": "install",
+      "confidence": 0.865,
+      "draftCount": 1,
+      "customerDraftVisible": false
+    },
+    {
+      "caseKey": "permanent_config_error",
+      "jobId": "5da2bd27-da62-49d5-91ec-32b64a5d1b38",
+      "attempts": 1,
+      "confidence": 0,
+      "nullDraft": true,
+      "draftCount": 0,
+      "publicReplies": 0
+    },
+    {
+      "caseKey": "http_sse_auto_answer",
+      "eventOrder": [
+        "classified",
+        "sources",
+        "token",
+        "token",
+        "token",
+        "token",
+        "token",
+        "token",
+        "done"
+      ],
+      "conversationId": "21113a8d-38bd-4eec-b9cd-b9feb1a42e78",
+      "savedAssistant": 1
+    },
+    {
+      "caseKey": "agents_pg_http",
+      "agentId": "4f78faa3-a714-4a85-ae9d-cdba03758333",
+      "createStatus": 201,
+      "duplicateStatus": 409,
+      "disabled": true,
+      "passwordLogged": false
+    },
+    {
+      "process": "dev",
+      "pid": 31468,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "phase": "root_dev_stopped",
+      "platform": "win32",
+      "shutdownMechanism": "owned taskkill tree (OS SIGTERM handler delivery unverified)"
+    },
+    {
+      "phase": "standalone_worker",
+      "retryJobId": "193ba91a-833a-49a4-9a1b-527a150ee51b",
+      "retryAttempts": 2,
+      "finalEscalated": true,
+      "emptyDraftCount": 0,
+      "recoveredLeaseJobId": "ee11b907-e572-4653-b8d5-4da37756461f",
+      "duplicateMessages": 0,
+      "faultInjection": "test-only transient wrapper; real queue and default API processor for lease case"
+    },
+    {
+      "process": "standalone-worker",
+      "pid": 26068,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "process": "production-build",
+      "pid": 11272,
+      "exit": 0,
+      "signal": null
+    },
+    {
+      "phase": "owned_database_cleanup",
+      "name": "support_window1_1792623379811_e2e",
+      "connections": 0,
+      "dropped": true
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+import assert from 'node:assert/strict';
+import { test } from 'vitest';
+import { maskDeep } from '@support/ai';
+import { adaptAIResult, createAIProcessor } from '../src/ai-adapter.js';
+import { ProcessorFailure } from '../src/index.js';
+import { providerResult, realPipelineDeps } from './ai-fixtures.js';
+
+const input = { tenantId: 'tenant-a', ticketId: 'ticket-a', messageId: 'message-a' };
+test('adapter preserves complete masked provider JSON and flattens query columns', () => {
+  const raw = providerResult(input.tenantId, input.ticketId, input.messageId);
+  const result = adaptAIResult(input, raw);
+  assert.deepEqual(result.aiResult, maskDeep(raw));
+  assert.notEqual((result.aiResult as typeof raw).reasonDetail, raw.reasonDetail);
+  assert.equal(result.action, 'reply');
+  assert.equal(result.confidence, raw.confidence.final);
+  assert.equal(result.category, raw.classification!.category);
+  assert.equal(result.inputTokens, 2);
+  assert.equal(result.outputTokens, 3);
+  assert.equal(result.pipelineVersion, raw.pipelineVersion);
+  assert.equal(raw.reasonDetail, '연락처 user@example.com'); // masking does not mutate input
+});
+test('pending_approval is a decision and maps to a private draft', () => {
+  const raw = providerResult(input.tenantId, input.ticketId, input.messageId);
+  raw.decision = 'pending_approval'; raw.reason = 'approval_mode';
+  assert.equal(adaptAIResult(input, raw).action, 'draft');
+  assert.equal(adaptAIResult(input, raw).decision, 'pending_approval');
+});
+test('cross-tenant sources in either source array are rejected without persisting content', () => {
+  for (const location of ['sources', 'draft'] as const) {
+    const raw = providerResult(input.tenantId, input.ticketId, input.messageId);
+    if (location === 'sources') raw.sources = [{ ...raw.sources[0]!, tenantId: 'tenant-b' }];
+    else raw.draft!.sources = [{ ...raw.sources[0]!, tenantId: 'tenant-b' }];
+    assert.throws(() => adaptAIResult(input, raw), (error: unknown) => error instanceof ProcessorFailure && error.permanent && error.result === undefined);
+  }
+});
+test('actual @support/ai processInquiry is invoked with tenant-scoped DI', async () => {
+  const result = await createAIProcessor(realPipelineDeps(input.tenantId))(input);
+  assert.equal(result.decision, 'auto_answer');
+  assert.equal(result.action, 'reply');
+  assert.ok(result.body.includes('설치 프로그램'));
+  assert.equal((result.aiResult as { tenantId: string }).tenantId, input.tenantId);
+});
+test('pipeline tenant-mismatch errors remain permanent and non-public', async () => {
+  await assert.rejects(createAIProcessor(realPipelineDeps(input.tenantId, { foreignSource: true }))(input),
+    (error: unknown) => error instanceof ProcessorFailure && error.permanent && error.code === 'ai_tenant_mismatch');
+});

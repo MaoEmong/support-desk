@@ -1,0 +1,26 @@
+# gates run1 2026-10-22T08:48:43.0315645+09:00
+## npx tsc --noEmit --incremental false (apps/web)
+exit=0 time=6.3s
+
+## npx eslint src e2e (apps/web)
+exit=0 time=3.2s
+
+## pnpm --filter @support/web build (root)
+exit=0 time=27s
+├ ƒ /t/[slug]/admin/tickets/[id]         6.78 kB         217 kB
+├ ƒ /t/[slug]/login                      2.35 kB         236 kB
+├ ƒ /t/[slug]/signup                     1.97 kB         235 kB
+├ ƒ /t/[slug]/tickets                    1.86 kB         162 kB
+├ ƒ /t/[slug]/tickets/[id]               5.36 kB         229 kB
+└ ƒ /t/[slug]/tickets/new                7.19 kB         213 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/6ef561e2-0c1a9dfbaf537b77.js  54.2 kB
+  ├ chunks/752-c15050267a3c6f27.js       46.4 kB
+  └ other shared chunks (total)             2 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+## Playwright 전체(run1) start=2026-10-22T08:49:29.1853561+09:00
+exit=1 time=398.3s

@@ -1,0 +1,294 @@
+{
+  "tenantSlug": "mailpulse",
+  "version": 1,
+  "articles": [
+    {
+      "id": "mp-kb-001",
+      "category": "billing",
+      "title": "요금제 구성 확인",
+      "question": "요금제는 어디서 비교하나요?",
+      "answer": "워크스페이스 설정의 **요금제**에서 기본형과 성장형의 발송 한도 및 기능을 비교할 수 있습니다. 표시된 한도는 이메일과 문자의 채널별 기준을 따릅니다. 현재 계약의 적용 조건은 같은 화면의 계약 정보를 확인해 주세요. [도움말](https://docs.mailpulse.example/articles/mp-001)",
+      "tags": [
+        "요금제",
+        "한도"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-002",
+      "category": "billing",
+      "title": "청구서 내려받기",
+      "question": "이번 달 청구서는 어디서 받아요?",
+      "answer": "결제 관리 권한이 있는 구성원은 설정의 **청구 내역**에서 월별 청구서를 내려받을 수 있습니다. 청구서에는 이용 기간과 채널별 사용량이 표시됩니다. 사업자 정보 수정은 다음 청구서부터 반영되며 기존 문서 정정은 상담원에게 문의해 주세요. [도움말](https://docs.mailpulse.example/articles/mp-002)",
+      "tags": [
+        "청구서",
+        "내역"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-003",
+      "category": "billing",
+      "title": "발송 한도와 사용량",
+      "question": "발송 한도가 얼마나 남았나요?",
+      "answer": "대시보드의 사용량 카드에서 현재 청구 기간의 채널별 잔여 한도를 확인할 수 있습니다. 예약된 발송과 실제 완료된 발송은 별도 항목으로 표시됩니다. 한도가 부족하면 예약 캠페인의 대상 수를 조정하거나 요금제 변경 조건을 확인해 주세요. [도움말](https://docs.mailpulse.example/articles/mp-003)",
+      "tags": [
+        "사용량",
+        "발송한도"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-004",
+      "category": "campaign",
+      "title": "캠페인 만들기",
+      "question": "첫 이메일 캠페인은 어떻게 만들어요?",
+      "answer": "캠페인 메뉴에서 새 캠페인을 만들고 이메일 채널을 선택하세요. 발신자, 수신 대상, 제목과 본문을 입력한 뒤 미리보기와 테스트 발송을 확인하세요. 수신 동의와 광고 표시를 확인한 후 최종 발송을 진행하세요. [도움말](https://docs.mailpulse.example/articles/mp-004)",
+      "tags": [
+        "캠페인",
+        "생성"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-005",
+      "category": "campaign",
+      "title": "예약 발송 변경",
+      "question": "예약한 캠페인 시간을 바꿀 수 있나요?",
+      "answer": "캠페인이 예약 대기 상태일 때 상세 화면에서 예약을 해제하고 시간을 다시 설정할 수 있습니다. 예약 시각은 워크스페이스에 지정한 시간대를 기준으로 표시됩니다. 이미 발송이 시작된 캠페인은 시간을 변경할 수 없습니다. [도움말](https://docs.mailpulse.example/articles/mp-005)",
+      "tags": [
+        "예약",
+        "시간대"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-006",
+      "category": "campaign",
+      "title": "세그먼트 조건 설정",
+      "question": "구매한 고객만 따로 묶고 싶어요.",
+      "answer": "고객 메뉴의 세그먼트에서 구매 여부와 구매일 같은 조건을 설정하세요. 여러 조건은 모두 충족 또는 하나 이상 충족 방식으로 조합할 수 있습니다. 저장 후 예상 대상 수와 샘플 고객을 확인하고 캠페인에 연결하세요. [도움말](https://docs.mailpulse.example/articles/mp-006)",
+      "tags": [
+        "세그먼트",
+        "고객"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-007",
+      "category": "integration",
+      "title": "API 키 발급과 보관",
+      "question": "API 키는 어디서 만드나요?",
+      "answer": "관리 권한으로 설정의 개발자 메뉴에서 API 키를 발급하세요. 키는 발급 직후에만 전체 값이 표시되므로 안전한 비밀 저장소에 보관하세요. 문의글이나 공개 저장소에 키를 붙이지 말고 필요한 권한만 부여하세요. [도움말](https://docs.mailpulse.example/articles/mp-007)",
+      "tags": [
+        "API",
+        "키"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-008",
+      "category": "integration",
+      "title": "쇼핑몰 연결 순서",
+      "question": "쇼핑몰 고객을 연결하려면 뭘 해야 해요?",
+      "answer": "연동 메뉴에서 쇼핑몰 연결을 추가하고 해당 상점의 관리자 승인을 진행하세요. 동기화할 고객 필드와 수신 동의 항목을 매핑한 후 테스트 동기화를 실행하세요. 최초 연결 이후의 동기화 상태는 연동 기록에서 확인할 수 있습니다. [도움말](https://docs.mailpulse.example/articles/mp-008)",
+      "tags": [
+        "쇼핑몰",
+        "동기화"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-009",
+      "category": "integration",
+      "title": "API 호출 제한 대응",
+      "question": "API에서 429 오류가 나요.",
+      "answer": "429 응답은 짧은 시간에 요청 한도를 초과했다는 뜻입니다. 응답의 재시도 대기 값을 확인하고 요청 간격을 늘려 다시 시도하세요. 같은 작업을 반복 등록하지 않도록 요청 식별자를 유지하고 재시도 횟수를 제한하세요. [도움말](https://docs.mailpulse.example/articles/mp-009)",
+      "tags": [
+        "API",
+        "429"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-010",
+      "category": "delivery_failure",
+      "title": "반송 원인 확인",
+      "question": "이메일이 반송됐는데 왜 그런가요?",
+      "answer": "캠페인 결과에서 해당 수신자의 반송 사유를 확인하세요. 없는 주소나 차단된 주소는 수정 또는 제외하고 일시적 수신함 문제는 상태를 확인한 뒤 재시도하세요. 수신 거부한 주소는 재발송 대상으로 추가하지 마세요. [도움말](https://docs.mailpulse.example/articles/mp-010)",
+      "tags": [
+        "반송",
+        "이메일"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-011",
+      "category": "delivery_failure",
+      "title": "문자 발송 실패 확인",
+      "question": "문자가 실패로 떠요.",
+      "answer": "발송 결과의 실패 코드를 열어 번호 형식과 발신번호 등록 상태를 확인하세요. 잘못된 번호는 수정하고 수신 거부 상태인 고객은 대상에서 제외하세요. 원인이 해소되지 않으면 캠페인 식별자와 오류 코드만 전달하세요. [도움말](https://docs.mailpulse.example/articles/mp-011)",
+      "tags": [
+        "문자",
+        "실패"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-012",
+      "category": "delivery_failure",
+      "title": "발신 도메인 인증 점검",
+      "question": "발신 도메인 인증이 대기 중이에요.",
+      "answer": "발신자 설정에 표시된 도메인 인증 레코드를 도메인 관리 화면에 등록하세요. 레코드 반영에는 최대 48시간이 걸릴 수 있으므로 등록값의 공백과 중복을 확인하세요. 계속 대기 중이면 비밀값을 제외한 도메인과 상태 화면으로 문의하세요. [도움말](https://docs.mailpulse.example/articles/mp-012)",
+      "tags": [
+        "도메인",
+        "인증"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-013",
+      "category": "report",
+      "title": "열람률 계산 기준",
+      "question": "열람률은 어떻게 계산하나요?",
+      "answer": "열람률은 추적 가능한 고유 열람 수를 전달 완료 수로 나눈 비율입니다. 이미지 차단이나 개인정보 보호 설정 때문에 실제 읽기와 차이가 날 수 있습니다. 성과 비교 시 클릭률과 전환 지표도 함께 확인하세요. [도움말](https://docs.mailpulse.example/articles/mp-013)",
+      "tags": [
+        "열람률",
+        "통계"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-014",
+      "category": "report",
+      "title": "리포트 갱신 지연",
+      "question": "방금 발송했는데 통계가 안 바뀌어요.",
+      "answer": "캠페인 리포트는 보통 5분 간격으로 갱신됩니다. 수신 서버 응답이 늦으면 일부 전달 결과가 뒤늦게 반영될 수 있습니다. 1시간 이상 변화가 없으면 캠페인 식별자와 확인 시각을 남겨 주세요. [도움말](https://docs.mailpulse.example/articles/mp-014)",
+      "tags": [
+        "리포트",
+        "지연"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-015",
+      "category": "report",
+      "title": "리포트 내보내기",
+      "question": "캠페인 결과를 파일로 받을 수 있나요?",
+      "answer": "캠페인 리포트의 내보내기에서 조회 기간과 채널을 선택해 파일을 생성하세요. 파일에는 현재 권한으로 열람 가능한 항목만 포함됩니다. 고객 정보가 포함된 파일은 접근 권한과 보관 기간을 정해 관리하세요. [도움말](https://docs.mailpulse.example/articles/mp-015)",
+      "tags": [
+        "내보내기",
+        "리포트"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-016",
+      "category": "compliance",
+      "title": "수신 거부 링크 확인",
+      "question": "이메일에 수신 거부는 어떻게 넣어요?",
+      "answer": "광고성 캠페인은 편집기의 수신 거부 블록을 포함하도록 구성하세요. 테스트 발송에서 수신 거부 링크가 정상 동작하는지 확인하세요. 실제 의무와 예외는 발송 지역 및 메시지 성격에 따라 달라질 수 있으므로 내부 담당자의 확인을 거치세요. [도움말](https://docs.mailpulse.example/articles/mp-016)",
+      "tags": [
+        "수신거부",
+        "광고"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-017",
+      "category": "compliance",
+      "title": "수신 동의 기록 관리",
+      "question": "동의 기록을 보관할 수 있나요?",
+      "answer": "고객 상세에서 수신 동의 상태와 동의 시각 및 수집 경로를 관리할 수 있습니다. 외부 고객을 가져올 때는 확보한 동의 근거를 확인하고 해당 필드를 함께 매핑하세요. 동의가 불명확한 대상을 임의로 동의 상태로 변경하지 마세요. [도움말](https://docs.mailpulse.example/articles/mp-017)",
+      "tags": [
+        "동의",
+        "기록"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-018",
+      "category": "compliance",
+      "title": "스팸 신고 증가 대응",
+      "question": "스팸 신고가 늘면 어떻게 해야 해요?",
+      "answer": "해당 캠페인의 추가 발송을 멈추고 대상 선정 및 동의 기록을 확인하세요. 수신 거부 대상과 반송 주소를 제외하고 제목 및 발송 빈도를 점검하세요. 신고 회피나 수신 거부 우회를 위한 재발송은 지원하지 않습니다. [도움말](https://docs.mailpulse.example/articles/mp-018)",
+      "tags": [
+        "스팸",
+        "신고"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-019",
+      "category": "refund",
+      "title": "이용료 환불 요청 절차",
+      "question": "이용료를 환불받고 싶어요.",
+      "answer": "이용료 환불은 상담원이 계약 조건과 이용 내역을 검토한 뒤 안내합니다. 워크스페이스 식별자, 청구 번호와 요청 사유를 문의글에 남겨 주세요. 접수만으로 환불 승인이나 지급 일정을 확정할 수 없습니다. [도움말](https://docs.mailpulse.example/articles/mp-019)",
+      "tags": [
+        "환불",
+        "절차"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-020",
+      "category": "refund",
+      "title": "청구 취소 및 중복 청구 확인",
+      "question": "청구를 취소하고 중복 결제도 확인해 주세요.",
+      "answer": "청구 취소 및 중복 결제 판단은 상담원의 확인이 필요합니다. 청구 번호와 결제 시각을 제공하고 결제 수단 번호는 가려 주세요. 검토 전에는 취소 완료나 금액 반환을 약속할 수 없습니다. [도움말](https://docs.mailpulse.example/articles/mp-020)",
+      "tags": [
+        "청구취소",
+        "중복결제"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-021",
+      "category": "account_security",
+      "title": "비밀번호 재설정",
+      "question": "워크스페이스 비밀번호는 어떻게 재설정하나요?",
+      "answer": "로그인 화면의 비밀번호 재설정에서 가입 이메일을 입력하세요. 발송된 링크의 유효 시간은 20분이며 새 비밀번호로 변경한 뒤 다시 로그인하세요. 계정 보안 문의는 상담원 확인 절차로 연결되며 비밀번호와 인증 코드는 수집하지 않습니다. [도움말](https://docs.mailpulse.example/articles/mp-021)",
+      "tags": [
+        "비밀번호",
+        "재설정"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-022",
+      "category": "account_security",
+      "title": "계정도용 및 2단계 인증 복구",
+      "question": "모르는 로그인이 있고 2단계 인증도 안 돼요.",
+      "answer": "모르는 로그인이나 2단계 인증 복구 요청은 상담원에게 즉시 전달합니다. 접근 가능한 안전한 기기에서 비밀번호를 변경하고 의심 접속 시각을 기록하세요. 상담원은 본인 확인 후 복구 절차를 안내하며 인증 해제나 권한 변경을 사전에 확약하지 않습니다. [도움말](https://docs.mailpulse.example/articles/mp-022)",
+      "tags": [
+        "도용",
+        "2단계인증"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-023",
+      "category": "feature_request",
+      "title": "기능 제안 접수",
+      "question": "새 기능을 제안할 수 있나요?",
+      "answer": "문의글의 기능 제안 유형으로 필요한 작업과 현재 불편을 적어 주세요. 적용 대상 채널과 기대 효과를 함께 적으면 검토에 도움이 됩니다. 접수된 제안은 검토 대상이며 개발 일정이나 제공 여부가 확정되는 것은 아닙니다. [도움말](https://docs.mailpulse.example/articles/mp-023)",
+      "tags": [
+        "기능",
+        "제안"
+      ],
+      "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "mp-kb-024",
+      "category": "feature_request",
+      "title": "기능 제안 진행 확인",
+      "question": "제안한 기능이 언제 나오나요?",
+      "answer": "기능 제안의 검토 상태는 기존 문의글의 상담원 답변으로 안내합니다. 이미 접수한 제안이라면 같은 문의글에 추가 상황을 남겨 주세요. 검토 중인 제안에는 확정되지 않은 출시일을 안내하지 않습니다. [도움말](https://docs.mailpulse.example/articles/mp-024)",
+      "tags": [
+        "기능",
+        "일정"
+      ],
+      "updatedAt": "2026-10-01"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Path": "apps\\web\\package.json",
+    "Hash": "B76CC2E59C8D76D28FDDA04A08EBDE61F1245D235BEF1FE26E3206B2B9AB1CCF"
+  },
+  {
+    "Path": "pnpm-lock.yaml",
+    "Hash": "FB16B4D71EBBA019BBFF0E3783B63326BCEC171D739F88E9FA5F2AB4B48A1BB5"
+  }
+]

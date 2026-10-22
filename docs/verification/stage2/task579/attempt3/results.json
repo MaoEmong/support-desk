@@ -1,0 +1,80 @@
+{
+  "database": "support_task579_1792624758676_e2e",
+  "results": [
+    {
+      "check": "reset_refusal_not_repeated",
+      "priorEvidence": "attempt1/apps-web-cwd-reset-refusal.log",
+      "currentPassClaim": false
+    },
+    {
+      "process": "apps-web-cwd-reset-seed",
+      "pid": 35472,
+      "exit": 0,
+      "signal": null
+    },
+    {
+      "check": "apps_web_cwd_reset_seed",
+      "expectedExit": 0,
+      "migrations": 14,
+      "originalFrontendDatabaseTouched": false
+    },
+    {
+      "check": "apps_web_cwd_root_dev",
+      "cwd": "apps/web",
+      "command": "pnpm -w dev --port 3200 --hostname 127.0.0.1",
+      "port": 3200,
+      "database": "support_task579_1792624758676_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": 500
+    },
+    {
+      "check": "confirmed_sse_not_repeated",
+      "priorEvidence": "attempt2/results.json",
+      "currentPassClaim": false
+    },
+    {
+      "check": "real_heartbeat_comment",
+      "configuredDefaultMs": 15000,
+      "observedElapsedMs": 15046,
+      "comment": ": keep-alive",
+      "parserIgnoresComment": true
+    },
+    {
+      "check": "agents_atomic_security",
+      "agentId": "bd82bbb2-9500-4d79-8a54-f29fa3bd8760",
+      "rollbackStatus": 500,
+      "rollbackUserStatus": "active",
+      "rollbackRevokedSessions": 0,
+      "rollbackAuditRows": 0,
+      "disabledStatus": 200,
+      "priorSessionStatus": 401,
+      "auditRows": 1,
+      "foreignStatus": 404,
+      "selfStatus": 403,
+      "nonAgentStatus": 403,
+      "agentCreateStatus": 403,
+      "newAssignmentStatus": 400,
+      "assignedOpenCount": 1,
+      "listStatus": "disabled",
+      "passwordLeakCount": 0
+    },
+    {
+      "check": "runtime_env_identity",
+      "database": "support_task579_1792624758676_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": "500",
+      "rootAndWorkerIdentityLogsPresent": true
+    },
+    {
+      "process": "apps-web-cwd-root-dev",
+      "pid": 1584,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "cleanup": "support_task579_1792624758676_e2e",
+      "connections": 0,
+      "droppedOnlyOwned": true
+    }
+  ]
+}

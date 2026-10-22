@@ -1,0 +1,4 @@
+# check 2026-10-22T09:11:51.8615508+09:00
+listeners_3200: 0
+node_processes(dev.mjs|next|worker): 0
+e2e_db_connections: 0

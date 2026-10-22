@@ -1,0 +1,35 @@
+{
+  "name": "@support/ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "멀티테넌트 헬프데스크 AI 파이프라인: 분류 → 테넌트 KB 검색 → 정책 판단 → 답변 생성",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./contracts": "./src/contracts.ts",
+    "./data": "./src/data.ts",
+    "./fixtures": "./src/fixtures.ts",
+    "./testing": "./src/testing/index.ts"
+  },
+  "files": [
+    "src",
+    "data"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "eval": "tsx src/eval/cli.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.134.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

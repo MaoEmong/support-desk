@@ -1,0 +1,22 @@
+{
+  "database": "support_window1_1792623284836_e2e",
+  "records": [
+    {
+      "phase": "new_owned_database",
+      "name": "support_window1_1792623284836_e2e",
+      "sharedDatabaseTouched": false
+    },
+    {
+      "phase": "scoped_tests_not_repeated",
+      "priorEvidence": "attempt2/scoped-tests.log",
+      "priorPass": 45,
+      "currentPassClaim": false
+    },
+    {
+      "phase": "owned_database_cleanup",
+      "name": "support_window1_1792623284836_e2e",
+      "connections": 0,
+      "dropped": true
+    }
+  ]
+}

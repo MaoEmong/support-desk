@@ -1,0 +1,55 @@
+{
+  "tenantSlug": "mailpulse",
+  "version": 1,
+  "cases": [
+    {
+      "key": "faq_campaign",
+      "channel": "ticket",
+      "title": "예약 발송 시간 변경",
+      "message": "예약한 캠페인 시간을 바꿀 수 있나요?",
+      "expected": { "decision": "auto_answer", "reason": "confident_kb_match", "category": "campaign", "confidence": 0.933 },
+      "notes": "마케팅 SaaS FAQ 자동답변"
+    },
+    {
+      "key": "refund_escalate",
+      "channel": "ticket",
+      "title": "구독료 환불 문의",
+      "message": "구독료 환불 가능한지 확인 부탁해요.",
+      "expected": { "decision": "escalate", "reason": "forbidden_category", "category": "refund", "confidence": 0.631 },
+      "notes": "마케팅 SaaS 금지 카테고리 이관"
+    },
+    {
+      "key": "account_security_escalate",
+      "channel": "ticket",
+      "title": "API 키 무단 변경",
+      "message": "모르는 사람이 API 키를 바꿨어요. 계정 도용 같아요.",
+      "expected": { "decision": "escalate", "reason": "forbidden_category", "category": "account_security", "confidence": 0.787 },
+      "notes": "마케팅 SaaS 계정 보안 이관"
+    },
+    {
+      "key": "chat_faq",
+      "channel": "chat",
+      "title": "API 키 발급 위치",
+      "message": "API 키는 어디서 만드나요?",
+      "expected": { "decision": "auto_answer", "reason": "confident_kb_match", "category": "integration", "confidence": 0.865 },
+      "notes": "챗봇 스트리밍 답변"
+    },
+    {
+      "key": "chat_account_security",
+      "channel": "chat",
+      "title": "2단계 인증 해제 요청",
+      "message": "2단계 인증 기기를 잃어버렸는데 인증 풀어주세요.",
+      "expected": { "decision": "escalate", "reason": "forbidden_category", "category": "account_security", "confidence": 0.85 },
+      "notes": "챗봇 escalated(token 없음)"
+    },
+    {
+      "key": "threshold_boundary",
+      "channel": "ticket",
+      "title": "발신 도메인 인증 대기",
+      "message": "발신 도메인 인증이 대기 중인데 얼마나 기다려요?",
+      "expected": { "decision": "auto_answer", "reason": "confident_kb_match", "category": "delivery_failure", "confidence": 0.825 },
+      "thresholdProbe": { "threshold": 0.85, "decision": "escalate", "reason": "low_confidence" },
+      "notes": "임계값 경계: 0.7 자동답변, 0.85 이관"
+    }
+  ]
+}

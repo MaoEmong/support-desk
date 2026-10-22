@@ -1,0 +1,7 @@
+-- migration·seed 전후 대조용 스냅샷(비밀번호는 해시의 md5만, 본문은 md5만)
+select 'migrations', string_agg(name, ',' order by name) from support_migrations;
+select 'counts', json_build_object('tenants',(select count(*) from tenants),'tenant_settings',(select count(*) from tenant_settings),'users',(select count(*) from users),'tickets',(select count(*) from tickets),'ticket_messages',(select count(*) from ticket_messages),'kb_articles',(select count(*) from kb_articles),'conversations',(select count(*) from conversations),'ai_jobs',(select count(*) from ai_jobs),'ai_runs',(select count(*) from ai_runs),'ai_drafts',(select count(*) from ai_drafts),'sessions',(select count(*) from sessions))::text;
+select 'users', string_agg(id||'|'||coalesce(tenant_id::text,'-')||'|'||email||'|'||role||'|'||md5(password_hash), ';' order by id) from users;
+select 'tickets', coalesce(string_agg(id||'|'||tenant_id||'|'||customer_id||'|'||md5(title||body), ';' order by id), '') from tickets;
+select 'kb', string_agg(id||'|'||tenant_id||'|'||slug||'|'||md5(title||body), ';' order by id) from kb_articles;
+select 'settings', string_agg(t.slug||'|'||s.ai_threshold::text||'|'||coalesce(s.primary_color,'NULL')||'|'||s.approval_mode||'|'||s.forbidden_categories::text||'|'||s.categories::text||'|'||s.allowed_link_domains::text||'|'||s.chatbot_name||'|'||md5(s.ai_system_prompt), ';' order by t.slug) from tenant_settings s join tenants t on t.id=s.tenant_id;

@@ -1,0 +1,33 @@
+-- Preserve migration history; apply final union contract as a forward migration.
+ALTER TABLE tenant_settings RENAME COLUMN confidence_threshold TO ai_threshold;
+ALTER TABLE tenant_settings RENAME COLUMN allowed_domains TO allowed_link_domains;
+ALTER TABLE tenant_settings ADD COLUMN display_name text NOT NULL DEFAULT '', ADD COLUMN logo_url text, ADD COLUMN primary_color text, ADD COLUMN chatbot_name text NOT NULL DEFAULT 'Support Bot', ADD COLUMN ai_system_prompt text NOT NULL DEFAULT '', ADD COLUMN categories jsonb NOT NULL DEFAULT '[]', ADD COLUMN version integer NOT NULL DEFAULT 1;
+ALTER TABLE users ADD COLUMN status text NOT NULL DEFAULT 'active' CHECK(status IN ('active','disabled'));
+-- Existing sessions must be re-authenticated: their UUID id is replaced by token_hash.
+ALTER TABLE sessions DROP CONSTRAINT sessions_pkey;
+ALTER TABLE sessions DROP COLUMN id;
+ALTER TABLE sessions RENAME COLUMN token_hash TO id;
+ALTER TABLE sessions ADD PRIMARY KEY(id);
+ALTER TABLE sessions ADD COLUMN tenant_id uuid REFERENCES tenants(id), ADD COLUMN role text, ADD COLUMN csrf_token text, ADD COLUMN last_seen_at timestamptz NOT NULL DEFAULT now(), ADD COLUMN revoked_at timestamptz, ADD COLUMN ip text, ADD COLUMN user_agent text;
+UPDATE sessions s SET tenant_id=u.tenant_id, role=u.role, csrf_token=gen_random_uuid()::text || gen_random_uuid()::text, revoked_at=now() FROM users u WHERE u.id=s.user_id;
+ALTER TABLE sessions ALTER COLUMN role SET NOT NULL, ALTER COLUMN csrf_token SET NOT NULL;
+ALTER TABLE sessions ADD CONSTRAINT sessions_role_tenant CHECK((role='platform_admin' AND tenant_id IS NULL) OR (role IN ('customer','agent','tenant_admin') AND tenant_id IS NOT NULL));
+ALTER TABLE login_attempts RENAME COLUMN success TO succeeded;
+ALTER TABLE login_attempts ADD COLUMN key text, ADD COLUMN ip text;
+UPDATE login_attempts SET key=coalesce(tenant_id::text,'platform') || ':' || lower(email);
+ALTER TABLE login_attempts ALTER COLUMN key SET NOT NULL, ALTER COLUMN email SET DEFAULT '', ALTER COLUMN ip_hash SET DEFAULT '';
+CREATE INDEX login_attempts_key ON login_attempts(key,created_at);
+ALTER TABLE tickets RENAME COLUMN subject TO title;
+ALTER TABLE tickets ADD COLUMN category text, ADD COLUMN urgency text, ADD COLUMN sentiment text, ADD COLUMN idempotency_key text, ADD COLUMN auto_answered_at timestamptz, ADD COLUMN resolved_by_customer boolean NOT NULL DEFAULT false, ADD COLUMN closed_at timestamptz;
+CREATE UNIQUE INDEX tickets_idempotency ON tickets(tenant_id,customer_id,idempotency_key) WHERE idempotency_key IS NOT NULL;
+ALTER TABLE conversations ADD COLUMN status text NOT NULL DEFAULT 'open' CHECK(status IN ('open','converted','closed')), ADD COLUMN ticket_id uuid;
+ALTER TABLE conversations ADD CONSTRAINT conversations_ticket_tenant_fk FOREIGN KEY(tenant_id,ticket_id) REFERENCES tickets(tenant_id,id);
+ALTER TABLE ai_jobs ADD COLUMN kind text NOT NULL DEFAULT 'process_inquiry' CHECK(kind IN ('process_inquiry','regenerate_draft'));
+ALTER TABLE ticket_messages ADD COLUMN author_type text CHECK(author_type IN ('customer','agent','ai','system')), ADD COLUMN sources jsonb, ADD COLUMN draft_id uuid;
+ALTER TABLE conversation_messages ADD COLUMN sources jsonb;
+ALTER TABLE ai_runs ADD COLUMN message_id uuid, ADD COLUMN decision text, ADD COLUMN reason text, ADD COLUMN category text, ADD COLUMN urgency text, ADD COLUMN sentiment text, ADD COLUMN confidence double precision, ADD COLUMN sources jsonb, ADD COLUMN model text, ADD COLUMN input_tokens integer, ADD COLUMN output_tokens integer, ADD COLUMN latency_ms integer, ADD COLUMN error text, ADD COLUMN pipeline_version text NOT NULL DEFAULT 'v1';
+ALTER TABLE ai_runs ADD CONSTRAINT ai_runs_tenant_id_id UNIQUE(tenant_id,id);
+ALTER TABLE ai_drafts ADD COLUMN run_id uuid, ADD COLUMN sources jsonb, ADD COLUMN decided_by uuid, ADD COLUMN decided_at timestamptz, ADD COLUMN reject_reason text, ADD COLUMN sent_message_id uuid;
+ALTER TABLE ai_drafts ADD CONSTRAINT ai_drafts_tenant_id_id UNIQUE(tenant_id,id), ADD CONSTRAINT ai_drafts_run_tenant_fk FOREIGN KEY(tenant_id,run_id) REFERENCES ai_runs(tenant_id,id), ADD CONSTRAINT ai_drafts_decider_tenant_fk FOREIGN KEY(tenant_id,decided_by) REFERENCES users(tenant_id,id), ADD CONSTRAINT ai_drafts_sent_tenant_fk FOREIGN KEY(tenant_id,sent_message_id) REFERENCES ticket_messages(tenant_id,id);
+ALTER TABLE ticket_messages ADD CONSTRAINT ticket_messages_draft_tenant_fk FOREIGN KEY(tenant_id,draft_id) REFERENCES ai_drafts(tenant_id,id);
+ALTER TABLE kb_articles ALTER COLUMN category DROP NOT NULL, ADD COLUMN tags jsonb NOT NULL DEFAULT '[]';

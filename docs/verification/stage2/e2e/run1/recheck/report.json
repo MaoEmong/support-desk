@@ -1,0 +1,1840 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "apps\\web\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/review-fixes.spec.ts",
+      "e2e/stage2-integration.spec.ts"
+    ],
+    "configFile": "apps\\web\\playwright.config.ts",
+    "rootDir": "apps/web/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "apps\\web\\e2e\\global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<TEMP>/support-desk-e2e/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "apps/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "<TEMP>/support-desk-e2e/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "apps/web/e2e",
+        "testIgnore": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "<TEMP>/support-desk-e2e/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "apps/web/e2e",
+        "testIgnore": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs\\verification\\stage2\\e2e\\run1\\recheck\\report.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "docs\\verification\\stage2\\e2e\\run1\\recheck\\html",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "(pnpm -w db:seed --reset && pnpm -w dev --port 3200 --hostname 127.0.0.1) > \"docs\\verification\\stage2\\e2e\\run1\\recheck\\webserver.log\" 2>&1",
+      "cwd": "apps\\web",
+      "url": "http://127.0.0.1:3200/api/t/pixelforge/settings/public",
+      "reuseExistingServer": false,
+      "timeout": 300000,
+      "stdout": "ignore",
+      "stderr": "pipe",
+      "env": {
+        "DATABASE_URL": "postgresql://support:support@localhost:55432/support_desk_e2e",
+        "AI_MODE": "mock",
+        "WORKER_POLL_INTERVAL_MS": "500",
+        "SESSION_SECRET": "e2e-session-secret-0123456789abcdef-not-for-prod",
+        "APP_URL": "http://127.0.0.1:3200",
+        "PORT": "3200",
+        "NEXT_TELEMETRY_DISABLED": "1"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "login customer1",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:58:34.431Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-f5ec79aaeaf49ab71383",
+          "file": "auth.setup.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "login customer2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 334,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:58:34.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-bd58808e62f8d3ddd92c",
+          "file": "auth.setup.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "login agent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 334,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:58:35.241Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-b19a4b34a99dd9e3ed57",
+          "file": "auth.setup.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "login admin",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 341,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:58:35.586Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-67acbe3520c78cd62417",
+          "file": "auth.setup.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "login mpCustomer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 338,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:58:35.939Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-412f564d4613a4dee8a3",
+          "file": "auth.setup.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "login platform",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 341,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:58:36.288Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-479abab3f064a074bfa2",
+          "file": "auth.setup.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "warm up dev routes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 52716,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:58:36.637Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-1ccb35c7da00d384be62",
+          "file": "auth.setup.ts",
+          "line": 29,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "review-fixes.spec.ts",
+      "file": "review-fixes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "KB 만들기 다이얼로그: Esc·저장 후 트리거로 포커스 복귀, 결과 안내 role=status",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3039,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:59:30.235Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abdd2e2cf517d3c959fd-0c412e7681b4e18279b4",
+          "file": "review-fixes.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "정상 로그아웃: 로그인 화면으로 이동, 실패 안내 없음, 보호 화면 재접근 시 로그인",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8992,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:59:33.453Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abdd2e2cf517d3c959fd-1f38f4352c64abbe30ac",
+          "file": "review-fixes.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "초안 없는 티켓의 상담원 상세: h1 1개, 오류·409 없음",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2333,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T23:59:42.457Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abdd2e2cf517d3c959fd-36a1c71ae1f192f1e8c0",
+          "file": "review-fixes.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "KB 만들기 다이얼로그: Esc·저장 후 트리거로 포커스 복귀, 결과 안내 role=status",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4422,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T00:01:20.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abdd2e2cf517d3c959fd-9dfb8c974935791f651f",
+          "file": "review-fixes.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "정상 로그아웃: 로그인 화면으로 이동, 실패 안내 없음, 보호 화면 재접근 시 로그인",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10039,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T00:01:25.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abdd2e2cf517d3c959fd-50eee90de52c6daeddb8",
+          "file": "review-fixes.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "초안 없는 티켓의 상담원 상세: h1 1개, 오류·409 없음",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1897,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T00:01:35.195Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abdd2e2cf517d3c959fd-e12fd7af32c4ddd16b51",
+          "file": "review-fixes.spec.ts",
+          "line": 67,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "stage2-integration.spec.ts",
+      "file": "stage2-integration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "2단계 실제 AI·관리자 통합",
+          "file": "stage2-integration.spec.ts",
+          "line": 101,
+          "column": 6,
+          "specs": [
+            {
+              "title": "pixelforge FAQ 티켓 → 자동답변·근거 → 고객 해결 확인",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/faq_install"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"ba70a050-6d6e-4794-b36b-d9175e0efa76\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7369,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T23:59:44.892Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"ba70a050-6d6e-4794-b36b-d9175e0efa76\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-49875198f9ae95d5e550",
+              "file": "stage2-integration.spec.ts",
+              "line": 104,
+              "column": 3
+            },
+            {
+              "title": "환불 이관 → 큐 사유·초안 편집·승인 → 고객 반영 및 실제 초안 409",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/refund_escalate"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"e71442d5-5479-4bce-819f-a78840dfe109\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11211,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T23:59:52.273Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/refund_escalate"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"e71442d5-5479-4bce-819f-a78840dfe109\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-c9ed52165a6dbb6c3a95",
+              "file": "stage2-integration.spec.ts",
+              "line": 121,
+              "column": 3
+            },
+            {
+              "title": "챗봇 chat_faq: 실제 SSE·출력 정책·전환 멱등성",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/chat_faq"
+                    },
+                    {
+                      "type": "conversationId",
+                      "description": "{\"caseKey\":\"chat_faq\",\"id\":\"4c046efd-35dd-422a-99d7-4ff03a3238d1\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2393,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:00:03.500Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/chat_faq"
+                        },
+                        {
+                          "type": "conversationId",
+                          "description": "{\"caseKey\":\"chat_faq\",\"id\":\"4c046efd-35dd-422a-99d7-4ff03a3238d1\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-dfbf207e6aefec2b1635",
+              "file": "stage2-integration.spec.ts",
+              "line": 178,
+              "column": 5
+            },
+            {
+              "title": "챗봇 chat_hacking: 실제 SSE·출력 정책·전환 멱등성",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/chat_hacking"
+                    },
+                    {
+                      "type": "conversationId",
+                      "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"880d3c4f-dc4c-4aaa-a5c3-3892d45f6f80\"}"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"9affd8e0-d69a-43e5-bfa6-9f418a51c023\",\"conversationId\":\"880d3c4f-dc4c-4aaa-a5c3-3892d45f6f80\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:00:05.903Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/chat_hacking"
+                        },
+                        {
+                          "type": "conversationId",
+                          "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"880d3c4f-dc4c-4aaa-a5c3-3892d45f6f80\"}"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"9affd8e0-d69a-43e5-bfa6-9f418a51c023\",\"conversationId\":\"880d3c4f-dc4c-4aaa-a5c3-3892d45f6f80\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-6760831ab399a7561183",
+              "file": "stage2-integration.spec.ts",
+              "line": 178,
+              "column": 5
+            },
+            {
+              "title": "상담원 추가·단회 비밀번호·중복 이메일·비활성 세션·관리 경로 권한",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/faq_install"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"bdc05571-a9e7-4268-9d27-2f7b1ef99203\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18609,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:00:09.131Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"bdc05571-a9e7-4268-9d27-2f7b1ef99203\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-aaad13fb55bc34535f45",
+              "file": "stage2-integration.spec.ts",
+              "line": 239,
+              "column": 3
+            },
+            {
+              "title": "mailpulse FAQ는 해당 테넌트의 실제 AI 답변과 근거를 표시",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "mailpulse/faq_campaign"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"mailpulse\",\"caseKey\":\"faq_campaign\",\"id\":\"9b93fd4b-d47c-4845-846a-78ab1a1515ed\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6932,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:00:27.755Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "mailpulse/faq_campaign"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"mailpulse\",\"caseKey\":\"faq_campaign\",\"id\":\"9b93fd4b-d47c-4845-846a-78ab1a1515ed\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-f4138bbed1905f9175f5",
+              "file": "stage2-integration.spec.ts",
+              "line": 300,
+              "column": 3
+            },
+            {
+              "title": "KPI: 독립된 자동해결·이관 티켓 생성 후 두 비율과 분류 분포가 양수",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/faq_install"
+                    },
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/refund_escalate"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"03b54506-103c-4c34-83ca-d083123ce564\"}"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"d5c25887-b8bd-44ab-879e-296f3850c85e\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13859,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:00:34.698Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/refund_escalate"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"03b54506-103c-4c34-83ca-d083123ce564\"}"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"d5c25887-b8bd-44ab-879e-296f3850c85e\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-47bb7c6b8c075e8a7f08",
+              "file": "stage2-integration.spec.ts",
+              "line": 312,
+              "column": 3
+            },
+            {
+              "title": "pixelforge FAQ 티켓 → 자동답변·근거 → 고객 해결 확인",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/faq_install"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"fc6587ba-3467-430e-8adb-55a705380222\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7456,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:01:37.168Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"fc6587ba-3467-430e-8adb-55a705380222\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-7987a469f25e79fa9891",
+              "file": "stage2-integration.spec.ts",
+              "line": 104,
+              "column": 3
+            },
+            {
+              "title": "환불 이관 → 큐 사유·초안 편집·승인 → 고객 반영 및 실제 초안 409",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/refund_escalate"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"ce211ef9-ad90-4f89-9e88-2c28da9a9423\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11700,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:01:44.637Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/refund_escalate"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"ce211ef9-ad90-4f89-9e88-2c28da9a9423\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-6f11f13a4a78c38555f4",
+              "file": "stage2-integration.spec.ts",
+              "line": 121,
+              "column": 3
+            },
+            {
+              "title": "챗봇 chat_faq: 실제 SSE·출력 정책·전환 멱등성",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/chat_faq"
+                    },
+                    {
+                      "type": "conversationId",
+                      "description": "{\"caseKey\":\"chat_faq\",\"id\":\"a1ce15a4-b68b-43ff-bcb2-1458a454ac37\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2146,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:01:56.352Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/chat_faq"
+                        },
+                        {
+                          "type": "conversationId",
+                          "description": "{\"caseKey\":\"chat_faq\",\"id\":\"a1ce15a4-b68b-43ff-bcb2-1458a454ac37\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-97e7e8f403d0dcf30fd8",
+              "file": "stage2-integration.spec.ts",
+              "line": 178,
+              "column": 5
+            },
+            {
+              "title": "챗봇 chat_hacking: 실제 SSE·출력 정책·전환 멱등성",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/chat_hacking"
+                    },
+                    {
+                      "type": "conversationId",
+                      "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"88fafa46-03b0-4cbc-8695-c3d96aa47166\"}"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"44ec73d1-807f-434e-95be-07169bba04de\",\"conversationId\":\"88fafa46-03b0-4cbc-8695-c3d96aa47166\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2882,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:01:58.510Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/chat_hacking"
+                        },
+                        {
+                          "type": "conversationId",
+                          "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"88fafa46-03b0-4cbc-8695-c3d96aa47166\"}"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"caseKey\":\"chat_hacking\",\"id\":\"44ec73d1-807f-434e-95be-07169bba04de\",\"conversationId\":\"88fafa46-03b0-4cbc-8695-c3d96aa47166\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-355ec5c80f3bdb7b59d6",
+              "file": "stage2-integration.spec.ts",
+              "line": 178,
+              "column": 5
+            },
+            {
+              "title": "상담원 추가·단회 비밀번호·중복 이메일·비활성 세션·관리 경로 권한",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/faq_install"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"7456e7d6-863e-41af-a120-0f42e0515c7f\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15732,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:02:01.402Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"7456e7d6-863e-41af-a120-0f42e0515c7f\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-48925cf411779d3b7be5",
+              "file": "stage2-integration.spec.ts",
+              "line": 239,
+              "column": 3
+            },
+            {
+              "title": "mailpulse FAQ는 해당 테넌트의 실제 AI 답변과 근거를 표시",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "mailpulse/faq_campaign"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"mailpulse\",\"caseKey\":\"faq_campaign\",\"id\":\"6923ca6e-c3d8-4dc5-b362-bcd6d8451d92\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7392,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:02:17.149Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "mailpulse/faq_campaign"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"mailpulse\",\"caseKey\":\"faq_campaign\",\"id\":\"6923ca6e-c3d8-4dc5-b362-bcd6d8451d92\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-37bfc0cfdd310da2c113",
+              "file": "stage2-integration.spec.ts",
+              "line": 300,
+              "column": 3
+            },
+            {
+              "title": "KPI: 독립된 자동해결·이관 티켓 생성 후 두 비율과 분류 분포가 양수",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/faq_install"
+                    },
+                    {
+                      "type": "caseKey",
+                      "description": "pixelforge/refund_escalate"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"dd78a005-c039-4c6f-8a7d-2e265c6080ed\"}"
+                    },
+                    {
+                      "type": "ticketId",
+                      "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"8710441d-7d87-4f55-9f0e-b458e6ca8d7e\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11328,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T00:02:24.553Z",
+                      "annotations": [
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/refund_escalate"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"dd78a005-c039-4c6f-8a7d-2e265c6080ed\"}"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"refund_escalate\",\"id\":\"8710441d-7d87-4f55-9f0e-b458e6ca8d7e\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1de3263a16ba7e41b781-3ccc8cb4886d7c007745",
+              "file": "stage2-integration.spec.ts",
+              "line": 312,
+              "column": 3
+            }
+          ],
+          "suites": [
+            {
+              "title": "settings writers",
+              "file": "stage2-integration.spec.ts",
+              "line": 348,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "승인 모드: 접수 전 활성화 → 비공개 초안 → 승인 후 공개 → 설정 복구",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 180000,
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                            "line": 348,
+                            "column": 8
+                          }
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/approval_pending"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"approval_pending\",\"id\":\"bbca5e35-7bc6-442d-8c1c-c43da44148f9\"}"
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 17139,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-22T00:00:48.569Z",
+                          "annotations": [
+                            {
+                              "type": "serial",
+                              "location": {
+                                "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                                "line": 348,
+                                "column": 8
+                              }
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/approval_pending"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"approval_pending\",\"id\":\"bbca5e35-7bc6-442d-8c1c-c43da44148f9\"}"
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "1de3263a16ba7e41b781-41fc9eebc31bfc66c479",
+                  "file": "stage2-integration.spec.ts",
+                  "line": 351,
+                  "column": 5
+                },
+                {
+                  "title": "승인 모드 챗봇: done.ticketId 자동 접수 → 위젯 접수됨+링크·전환 버튼 없음 → 티켓 1건 → 복원 유지 → 설정 복구",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 180000,
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                            "line": 348,
+                            "column": 8
+                          }
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/chat_faq"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"caseKey\":\"chat_faq(approval)\",\"id\":\"d4ea70ec-28e3-4d76-9b33-09eea0911489\",\"conversationId\":\"03052ce8-462d-4825-808e-0268d9f1c9cc\"}"
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3935,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-22T00:01:05.722Z",
+                          "annotations": [
+                            {
+                              "type": "serial",
+                              "location": {
+                                "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                                "line": 348,
+                                "column": 8
+                              }
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/chat_faq"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"caseKey\":\"chat_faq(approval)\",\"id\":\"d4ea70ec-28e3-4d76-9b33-09eea0911489\",\"conversationId\":\"03052ce8-462d-4825-808e-0268d9f1c9cc\"}"
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "1de3263a16ba7e41b781-7f3af51018d3261719eb",
+                  "file": "stage2-integration.spec.ts",
+                  "line": 390,
+                  "column": 5
+                },
+                {
+                  "title": "임계값 0.85: 경계 문의는 이관하고 더 높은 신뢰도 FAQ는 자동답변 → 0.7 복구",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 180000,
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                            "line": 348,
+                            "column": 8
+                          }
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/threshold_boundary"
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"threshold_boundary\",\"id\":\"770b1b1f-c521-43c4-a2ae-3bc8270ca5f5\"}"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"3841e788-d27b-49cd-a522-58d97451feb0\"}"
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 9808,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-22T00:01:09.675Z",
+                          "annotations": [
+                            {
+                              "type": "serial",
+                              "location": {
+                                "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                                "line": 348,
+                                "column": 8
+                              }
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/threshold_boundary"
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/faq_install"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"threshold_boundary\",\"id\":\"770b1b1f-c521-43c4-a2ae-3bc8270ca5f5\"}"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"3841e788-d27b-49cd-a522-58d97451feb0\"}"
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "1de3263a16ba7e41b781-81545dbc82e86fdd03b2",
+                  "file": "stage2-integration.spec.ts",
+                  "line": 449,
+                  "column": 5
+                },
+                {
+                  "title": "승인 모드: 접수 전 활성화 → 비공개 초안 → 승인 후 공개 → 설정 복구",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 180000,
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                            "line": 348,
+                            "column": 8
+                          }
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/approval_pending"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"approval_pending\",\"id\":\"f65644ca-7863-42c6-b00b-a49784436506\"}"
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "mobile",
+                      "projectName": "mobile",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 17290,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-22T00:02:35.896Z",
+                          "annotations": [
+                            {
+                              "type": "serial",
+                              "location": {
+                                "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                                "line": 348,
+                                "column": 8
+                              }
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/approval_pending"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"approval_pending\",\"id\":\"f65644ca-7863-42c6-b00b-a49784436506\"}"
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "1de3263a16ba7e41b781-441a062b4da64d368687",
+                  "file": "stage2-integration.spec.ts",
+                  "line": 351,
+                  "column": 5
+                },
+                {
+                  "title": "승인 모드 챗봇: done.ticketId 자동 접수 → 위젯 접수됨+링크·전환 버튼 없음 → 티켓 1건 → 복원 유지 → 설정 복구",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 180000,
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                            "line": 348,
+                            "column": 8
+                          }
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/chat_faq"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"caseKey\":\"chat_faq(approval)\",\"id\":\"57c0de70-78ce-4b07-bc6b-f304c63daabc\",\"conversationId\":\"04eb595a-14af-4368-9e8c-fcdeae704a70\"}"
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "mobile",
+                      "projectName": "mobile",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3140,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-22T00:02:53.198Z",
+                          "annotations": [
+                            {
+                              "type": "serial",
+                              "location": {
+                                "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                                "line": 348,
+                                "column": 8
+                              }
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/chat_faq"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"caseKey\":\"chat_faq(approval)\",\"id\":\"57c0de70-78ce-4b07-bc6b-f304c63daabc\",\"conversationId\":\"04eb595a-14af-4368-9e8c-fcdeae704a70\"}"
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "1de3263a16ba7e41b781-662cca80fc4915edf992",
+                  "file": "stage2-integration.spec.ts",
+                  "line": 390,
+                  "column": 5
+                },
+                {
+                  "title": "임계값 0.85: 경계 문의는 이관하고 더 높은 신뢰도 FAQ는 자동답변 → 0.7 복구",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 180000,
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                            "line": 348,
+                            "column": 8
+                          }
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/threshold_boundary"
+                        },
+                        {
+                          "type": "caseKey",
+                          "description": "pixelforge/faq_install"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"threshold_boundary\",\"id\":\"de0c2584-5655-4ba5-8dc5-0c2d145a1b87\"}"
+                        },
+                        {
+                          "type": "ticketId",
+                          "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"bff4481b-2790-4f72-8bee-488d435a395a\"}"
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "mobile",
+                      "projectName": "mobile",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 9173,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-22T00:02:56.351Z",
+                          "annotations": [
+                            {
+                              "type": "serial",
+                              "location": {
+                                "file": "apps\\web\\e2e\\stage2-integration.spec.ts",
+                                "line": 348,
+                                "column": 8
+                              }
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/threshold_boundary"
+                            },
+                            {
+                              "type": "caseKey",
+                              "description": "pixelforge/faq_install"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"threshold_boundary\",\"id\":\"de0c2584-5655-4ba5-8dc5-0c2d145a1b87\"}"
+                            },
+                            {
+                              "type": "ticketId",
+                              "description": "{\"slug\":\"pixelforge\",\"caseKey\":\"faq_install\",\"id\":\"bff4481b-2790-4f72-8bee-488d435a395a\"}"
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "1de3263a16ba7e41b781-e3c2f9ec47a7ce0505cd",
+                  "file": "stage2-integration.spec.ts",
+                  "line": 449,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T23:58:17.014Z",
+    "duration": 289124.92,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

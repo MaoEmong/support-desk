@@ -1,0 +1,103 @@
+{
+  "base": "http://localhost:3100",
+  "database": "support_desk_acceptance",
+  "ticketId": "bdb0935a-7d3a-435e-92e1-69c390761ca5",
+  "results": [
+    {
+      "name": "unauthenticated ticket list",
+      "expected": 401,
+      "actual": 401,
+      "result": "pass"
+    },
+    {
+      "name": "public tenant settings",
+      "expected": 200,
+      "actual": 200,
+      "result": "pass"
+    },
+    {
+      "name": "seeded customer/staff/platform logins and HttpOnly cookies",
+      "expected": 5,
+      "actual": 5,
+      "result": "pass"
+    },
+    {
+      "name": "customer creates ticket over HTTP",
+      "expected": 201,
+      "actual": 201,
+      "result": "pass"
+    },
+    {
+      "name": "customer cannot enter staff queue",
+      "expected": 403,
+      "actual": 403,
+      "result": "pass"
+    },
+    {
+      "name": "another customer cannot read ticket",
+      "expected": 404,
+      "actual": 404,
+      "result": "pass"
+    },
+    {
+      "name": "another tenant staff cannot read ticket",
+      "expected": 404,
+      "actual": 404,
+      "result": "pass"
+    },
+    {
+      "name": "tenant session cannot access other tenant route",
+      "expected": 401,
+      "actual": 401,
+      "result": "pass"
+    },
+    {
+      "name": "staff write without CSRF rejected",
+      "expected": 403,
+      "actual": 403,
+      "result": "pass"
+    },
+    {
+      "name": "staff creates internal note",
+      "expected": 201,
+      "actual": 201,
+      "result": "pass"
+    },
+    {
+      "name": "customer DTO excludes internal notes/drafts/analysis",
+      "expected": true,
+      "actual": true,
+      "result": "pass"
+    },
+    {
+      "name": "staff conditional ticket update",
+      "expected": 200,
+      "actual": 200,
+      "result": "pass"
+    },
+    {
+      "name": "stale ticket version rejected",
+      "expected": 409,
+      "actual": 409,
+      "result": "pass"
+    },
+    {
+      "name": "platform aggregate excludes inquiry bodies",
+      "expected": true,
+      "actual": true,
+      "result": "pass"
+    },
+    {
+      "name": "platform session cannot enter tenant ticket route",
+      "expected": 401,
+      "actual": 401,
+      "result": "pass"
+    },
+    {
+      "name": "customer logout invalidates session",
+      "expected": 401,
+      "actual": 401,
+      "result": "pass"
+    }
+  ]
+}

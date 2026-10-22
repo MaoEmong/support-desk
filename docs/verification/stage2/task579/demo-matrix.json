@@ -1,0 +1,200 @@
+[
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "faq_install",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "154bbd2c-fcfc-4f4d-93a1-eaeac18e27c6",
+    "decision": "auto_answer",
+    "reason": "confident_kb_match",
+    "category": "install",
+    "confidence": 0.865
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "refund_escalate",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "de07d517-c271-4536-9669-2ab1c0112b52",
+    "decision": "escalate",
+    "reason": "forbidden_category",
+    "category": "refund",
+    "confidence": 0.781
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "hacking_escalate",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "63f341d5-cc4e-4915-9b06-fd0fc6af694b",
+    "decision": "escalate",
+    "reason": "forbidden_category",
+    "category": "hacking",
+    "confidence": 0.865
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "sanction_escalate",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "9eb7aea7-5b30-42a3-8fa3-4bbf7d4603fd",
+    "decision": "escalate",
+    "reason": "forbidden_category",
+    "category": "sanction",
+    "confidence": 0.796
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "approval_pending",
+    "channel": "ticket",
+    "override": {
+      "approvalMode": true
+    },
+    "autoAnswerCount": 0,
+    "jobId": "b45b34ea-5011-406b-b43b-1b690a3934ba",
+    "decision": "pending_approval",
+    "reason": "approval_mode",
+    "category": "event",
+    "confidence": 0.978
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "chat_faq",
+    "channel": "chat",
+    "override": {},
+    "autoAnswerCount": 0,
+    "conversationId": "e9f4cf63-a676-4476-b634-3d9a80bc9b0a",
+    "decision": "auto_answer",
+    "reason": "confident_kb_match",
+    "category": "bug",
+    "confidence": 0.933
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "chat_hacking",
+    "channel": "chat",
+    "override": {},
+    "autoAnswerCount": 0,
+    "conversationId": "664605e7-0ec3-4904-a905-bb8311d44a49",
+    "decision": "escalate",
+    "reason": "forbidden_category",
+    "category": "hacking",
+    "confidence": 0.821
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "threshold_boundary",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "d7ec7772-b0ab-4a82-acb6-e683df5065c0",
+    "decision": "auto_answer",
+    "reason": "confident_kb_match",
+    "category": "payment",
+    "confidence": 0.818
+  },
+  {
+    "tenantSlug": "mailpulse",
+    "caseKey": "faq_campaign",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "1553f05b-76ea-4c68-8e81-0f52c0ca2003",
+    "decision": "auto_answer",
+    "reason": "confident_kb_match",
+    "category": "campaign",
+    "confidence": 0.933
+  },
+  {
+    "tenantSlug": "mailpulse",
+    "caseKey": "refund_escalate",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "a15d1fd6-5c7f-4b56-ad6e-8befdd908913",
+    "decision": "escalate",
+    "reason": "forbidden_category",
+    "category": "refund",
+    "confidence": 0.631
+  },
+  {
+    "tenantSlug": "mailpulse",
+    "caseKey": "account_security_escalate",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "749e29e8-4fdc-4746-8837-754bd799a905",
+    "decision": "escalate",
+    "reason": "forbidden_category",
+    "category": "account_security",
+    "confidence": 0.787
+  },
+  {
+    "tenantSlug": "mailpulse",
+    "caseKey": "chat_faq",
+    "channel": "chat",
+    "override": {},
+    "autoAnswerCount": 0,
+    "conversationId": "cfc8aca4-5eea-4045-8380-0b4948023e18",
+    "decision": "auto_answer",
+    "reason": "confident_kb_match",
+    "category": "integration",
+    "confidence": 0.865
+  },
+  {
+    "tenantSlug": "mailpulse",
+    "caseKey": "chat_account_security",
+    "channel": "chat",
+    "override": {},
+    "autoAnswerCount": 0,
+    "conversationId": "472e4574-c25c-4db0-9413-77875b87ec0d",
+    "decision": "escalate",
+    "reason": "forbidden_category",
+    "category": "account_security",
+    "confidence": 0.85
+  },
+  {
+    "tenantSlug": "mailpulse",
+    "caseKey": "threshold_boundary",
+    "channel": "ticket",
+    "override": {},
+    "autoAnswerCount": 0,
+    "jobId": "8a601bde-db63-4b92-aaad-7b82587cdd85",
+    "decision": "auto_answer",
+    "reason": "confident_kb_match",
+    "category": "delivery_failure",
+    "confidence": 0.825
+  },
+  {
+    "tenantSlug": "pixelforge",
+    "caseKey": "threshold_boundary",
+    "channel": "probe",
+    "override": {
+      "threshold": 0.85
+    },
+    "autoAnswerCount": 0,
+    "jobId": "cdb95860-f3cb-4ab7-8d19-1494c6feb299",
+    "decision": "escalate",
+    "reason": "low_confidence",
+    "category": "payment",
+    "confidence": 0.818
+  },
+  {
+    "tenantSlug": "mailpulse",
+    "caseKey": "threshold_boundary",
+    "channel": "probe",
+    "override": {
+      "threshold": 0.85
+    },
+    "autoAnswerCount": 0,
+    "jobId": "3a45e68c-0271-4c7b-b3ce-43cf418b4aed",
+    "decision": "escalate",
+    "reason": "low_confidence",
+    "category": "delivery_failure",
+    "confidence": 0.825
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "database": "support_task579_1792624572335_e2e",
+  "results": [
+    {
+      "process": "apps-web-cwd-reset-refusal",
+      "pid": 12140,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "check": "apps_web_cwd_reset_active_connection_refused",
+      "expectedExit": 1,
+      "databasePreserved": true
+    },
+    {
+      "process": "apps-web-cwd-reset-seed",
+      "pid": 30704,
+      "exit": 0,
+      "signal": null
+    },
+    {
+      "check": "apps_web_cwd_reset_seed",
+      "expectedExit": 0,
+      "migrations": 14,
+      "originalFrontendDatabaseTouched": false
+    },
+    {
+      "check": "apps_web_cwd_root_dev",
+      "cwd": "apps/web",
+      "command": "pnpm -w dev --port 3200 --hostname 127.0.0.1",
+      "port": 3200,
+      "database": "support_task579_1792624572335_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": 500
+    },
+    {
+      "process": "apps-web-cwd-root-dev",
+      "pid": 34260,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "cleanup": "support_task579_1792624572335_e2e",
+      "connections": 0,
+      "droppedOnlyOwned": true
+    }
+  ]
+}

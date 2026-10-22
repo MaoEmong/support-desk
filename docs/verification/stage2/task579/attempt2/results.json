@@ -1,0 +1,82 @@
+{
+  "database": "support_task579_1792624652773_e2e",
+  "results": [
+    {
+      "check": "reset_refusal_not_repeated",
+      "priorEvidence": "attempt1/apps-web-cwd-reset-refusal.log",
+      "currentPassClaim": false
+    },
+    {
+      "process": "apps-web-cwd-reset-seed",
+      "pid": 39912,
+      "exit": 0,
+      "signal": null
+    },
+    {
+      "check": "apps_web_cwd_reset_seed",
+      "expectedExit": 0,
+      "migrations": 14,
+      "originalFrontendDatabaseTouched": false
+    },
+    {
+      "check": "apps_web_cwd_root_dev",
+      "cwd": "apps/web",
+      "command": "pnpm -w dev --port 3200 --hostname 127.0.0.1",
+      "port": 3200,
+      "database": "support_task579_1792624652773_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": 500
+    },
+    {
+      "check": "forbidden_click_conversion",
+      "tokenCount": 0,
+      "bannedKeyCounts": {
+        "confidence": 0,
+        "urgency": 0,
+        "sentiment": 0,
+        "summary": 0,
+        "score": 0,
+        "tenantId": 0,
+        "reasonDetail": 0,
+        "decision": 0,
+        "usage": 0,
+        "pipelineVersion": 0
+      },
+      "conversationId": "959fa2bc-b7f8-4ec8-bcc8-53bffb839e89",
+      "doneTicketId": null,
+      "clickedTicketId": "036a8003-1a68-4d89-aaa4-112a055cc2bf",
+      "conversionStatuses": [
+        200,
+        201
+      ],
+      "ticketCount": 1,
+      "workerJobs": 0,
+      "escalationReason": "forbidden_category",
+      "noticeCode": "ESCALATED"
+    },
+    {
+      "check": "approval_auto_conversion",
+      "conversationId": "5b31e87b-8e5d-4b77-aa25-3837ea9d0ee9",
+      "doneTicketId": "21898652-0a1d-475c-a3c0-32d560bfb514",
+      "duplicateTicketId": "21898652-0a1d-475c-a3c0-32d560bfb514",
+      "ticketCount": 1,
+      "workerJobs": 0,
+      "draftId": "cd150699-78a6-4327-abf6-bc0d210b2a48",
+      "draftConversationRetained": true,
+      "escalationReason": "approval_mode",
+      "noticeCode": "APPROVAL_REQUIRED",
+      "tokenCount": 0
+    },
+    {
+      "process": "apps-web-cwd-root-dev",
+      "pid": 20040,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "cleanup": "support_task579_1792624652773_e2e",
+      "connections": 0,
+      "droppedOnlyOwned": true
+    }
+  ]
+}

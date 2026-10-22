@@ -1,0 +1,26 @@
+{
+  "name": "@support/queue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./worker": "./src/worker.ts"
+  },
+  "scripts": {
+    "test": "vitest run --root .",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "worker": "tsx src/worker-entry.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.44.6"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.10",
+    "postgres": "3.4.7",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4"
+  }
+}

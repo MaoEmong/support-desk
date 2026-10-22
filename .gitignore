@@ -1,0 +1,31 @@
+# 에이전트·도구 작업 폴더
+.pixel-office/
+.codex/
+.claude/
+
+# 의존성·빌드 산출물
+node_modules/
+.next/
+dist/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# 환경 파일(예시만 공개)
+.env*
+!.env.example
+
+# 테스트·실행 산출물(원본 로그·대용량)
+playwright-report/
+test-results/
+*.log
+docs/verification/**/html/
+docs/verification/**/trace*
+docs/verification/**/*.zip
+docs/verification/**/*.webm
+docs/verification/**/*.png
+!docs/screenshots/*.png
+# Playwright 콘솔 원본(실패 메시지에 E2E 임시 비밀번호 실제값·로컬 경로 포함). 요약은 report.json·gates.txt에 남긴다
+docs/verification/stage2/e2e/run1/console-list.txt
+docs/verification/stage2/e2e/run1/playwright-console.txt
+docs/verification/stage2/e2e/run1/recheck-console.txt

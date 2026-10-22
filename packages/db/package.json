@@ -1,0 +1,32 @@
+{
+  "name": "@support/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "generate": "drizzle-kit generate",
+    "migrate": "tsx src/migrate.ts",
+    "seed": "tsx src/seed.ts",
+    "demo-accounts": "tsx src/demo-accounts-cli.ts"
+  },
+  "dependencies": {
+    "@support/ai": "workspace:*",
+    "drizzle-orm": "0.44.6",
+    "pg": "8.23.1",
+    "bcryptjs": "3.0.3",
+    "dotenv": "17.4.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.31.11",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "@types/node": "22.20.5",
+    "@types/pg": "8.23.1"
+  }
+}

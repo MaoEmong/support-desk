@@ -1,0 +1,157 @@
+{
+  "database": "support_task579_1792625083365_e2e",
+  "results": [
+    {
+      "check": "reset_refusal_not_repeated",
+      "priorEvidence": "attempt1/apps-web-cwd-reset-refusal.log",
+      "currentPassClaim": false
+    },
+    {
+      "process": "apps-web-cwd-reset-seed",
+      "pid": 5532,
+      "exit": 0,
+      "signal": null
+    },
+    {
+      "check": "apps_web_cwd_reset_seed",
+      "expectedExit": 0,
+      "migrations": 14,
+      "originalFrontendDatabaseTouched": false
+    },
+    {
+      "check": "apps_web_cwd_root_dev",
+      "cwd": "apps/web",
+      "command": "pnpm -w dev --port 3200 --hostname 127.0.0.1",
+      "port": 3200,
+      "database": "support_task579_1792625083365_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": 500
+    },
+    {
+      "check": "owned_runtime_pids",
+      "processes": [
+        {
+          "pid": 36624,
+          "parentPid": 2480,
+          "role": "owned-child"
+        },
+        {
+          "pid": 29944,
+          "parentPid": 36624,
+          "role": "owned-child"
+        },
+        {
+          "pid": 33576,
+          "parentPid": 36624,
+          "role": "root-dev-wrapper"
+        },
+        {
+          "pid": 34996,
+          "parentPid": 33576,
+          "role": "root-dev-wrapper"
+        },
+        {
+          "pid": 6528,
+          "parentPid": 34996,
+          "role": "owned-child"
+        },
+        {
+          "pid": 17924,
+          "parentPid": 34996,
+          "role": "owned-child"
+        },
+        {
+          "pid": 31924,
+          "parentPid": 17924,
+          "role": "root-worker-wrapper"
+        },
+        {
+          "pid": 30188,
+          "parentPid": 31924,
+          "role": "root-worker-wrapper"
+        },
+        {
+          "pid": 10664,
+          "parentPid": 6528,
+          "role": "next"
+        },
+        {
+          "pid": 47464,
+          "parentPid": 30188,
+          "role": "owned-child"
+        },
+        {
+          "pid": 30292,
+          "parentPid": 10664,
+          "role": "next"
+        },
+        {
+          "pid": 42656,
+          "parentPid": 47464,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 15612,
+          "parentPid": 42656,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 45204,
+          "parentPid": 15612,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 27728,
+          "parentPid": 30292,
+          "role": "next"
+        }
+      ],
+      "listeners": [
+        27728
+      ]
+    },
+    {
+      "check": "dev.runtime",
+      "pid": 34996,
+      "parentPid": 33576,
+      "database": "support_task579_1792625083365_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": "500"
+    },
+    {
+      "check": "worker.runtime",
+      "pid": 30188,
+      "parentPid": 31924,
+      "database": "support_task579_1792625083365_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": "500"
+    },
+    {
+      "check": "actual_server_log_password_leak",
+      "count": 0
+    },
+    {
+      "check": "runtime_env_identity",
+      "database": "support_task579_1792625083365_e2e",
+      "aiMode": "mock",
+      "pollIntervalMs": "500",
+      "rootAndWorkerIdentityLogsPresent": true
+    },
+    {
+      "process": "apps-web-cwd-root-dev",
+      "pid": 36624,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "check": "owned_runtime_stopped",
+      "survivors": [],
+      "listeners": []
+    },
+    {
+      "cleanup": "support_task579_1792625083365_e2e",
+      "connections": 0,
+      "droppedOnlyOwned": true
+    }
+  ]
+}

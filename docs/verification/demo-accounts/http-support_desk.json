@@ -1,0 +1,320 @@
+{
+  "base": "http://127.0.0.1:3300",
+  "at": "2026-10-22T04:15:35.709Z",
+  "total": 52,
+  "failed": 0,
+  "results": [
+    {
+      "name": "공개 설정 pixelforge 200",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "공개 설정 mailpulse 200",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 c1@pf.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 c1@pf.test",
+      "expected": "customer",
+      "actual": "customer",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 c2@pf.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 c2@pf.test",
+      "expected": "customer",
+      "actual": "customer",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 agent@pf.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 agent@pf.test",
+      "expected": "agent",
+      "actual": "agent",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 admin@pf.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 admin@pf.test",
+      "expected": "tenant_admin",
+      "actual": "tenant_admin",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 c1@mp.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 c1@mp.test",
+      "expected": "customer",
+      "actual": "customer",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 c2@mp.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 c2@mp.test",
+      "expected": "customer",
+      "actual": "customer",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 agent@mp.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 agent@mp.test",
+      "expected": "agent",
+      "actual": "agent",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 admin@mp.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 admin@mp.test",
+      "expected": "tenant_admin",
+      "actual": "tenant_admin",
+      "ok": true
+    },
+    {
+      "name": "로그인 성공 admin@platform.test",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "역할 admin@platform.test",
+      "expected": "platform_admin",
+      "actual": "platform_admin",
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 customer1@pixelforge.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 c1@pf.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 customer2@pixelforge.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 c2@pf.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 agent@pixelforge.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 agent@pf.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 admin@pixelforge.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 admin@pf.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 customer1@mailpulse.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 c1@mp.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 customer2@mailpulse.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 c2@mp.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 agent@mailpulse.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 agent@mp.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 admin@mailpulse.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 admin@mp.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "이전 이메일+이전 비번 거부 platform@support.example.com",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "새 이메일+이전 비번 거부 admin@platform.test",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "고객 → 상담원 큐 403",
+      "expected": 403,
+      "actual": 403,
+      "ok": true
+    },
+    {
+      "name": "상담원 → 테넌트 설정 403",
+      "expected": 403,
+      "actual": 403,
+      "ok": true
+    },
+    {
+      "name": "상담원 → 상담원 생성 403",
+      "expected": 403,
+      "actual": 403,
+      "ok": true
+    },
+    {
+      "name": "테넌트 관리자 → 설정 200",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "플랫폼 관리자 → 테넌트 집계 200",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "플랫폼 관리자 → 테넌트 티켓 API 401",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "테넌트 관리자 → 플랫폼 API 401",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "pf 고객 세션 → mailpulse 경로 401",
+      "expected": 401,
+      "actual": 401,
+      "ok": true
+    },
+    {
+      "name": "pf 고객1 문의 목록 200",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    },
+    {
+      "name": "pf 고객1 기존 문의 있음",
+      "expected": "string",
+      "actual": "string",
+      "ok": true
+    },
+    {
+      "name": "pf 고객2 → 고객1 티켓 404",
+      "expected": 404,
+      "actual": 404,
+      "ok": true
+    },
+    {
+      "name": "mp 상담원 → pf 티켓 id(자기 테넌트 경로) 404",
+      "expected": 404,
+      "actual": 404,
+      "ok": true
+    },
+    {
+      "name": "mp 고객 → pf 티켓 id(자기 테넌트 경로) 404",
+      "expected": 404,
+      "actual": 404,
+      "ok": true
+    },
+    {
+      "name": "pf 상담원 → pf 고객1 티켓 200",
+      "expected": 200,
+      "actual": 200,
+      "ok": true
+    }
+  ]
+}

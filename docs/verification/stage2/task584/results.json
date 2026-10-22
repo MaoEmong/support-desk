@@ -1,0 +1,215 @@
+{
+  "database": "support_sse584_1792625629047_e2e",
+  "execution": "one complete SSE execution; no prior pass mixing",
+  "results": [
+    {
+      "phase": "start",
+      "database": "support_sse584_1792625629047_e2e"
+    },
+    {
+      "phase": "owned_processes",
+      "processes": [
+        {
+          "pid": 4124,
+          "parentPid": 14284,
+          "role": "owned-child"
+        },
+        {
+          "pid": 17392,
+          "parentPid": 4124,
+          "role": "owned-child"
+        },
+        {
+          "pid": 16912,
+          "parentPid": 4124,
+          "role": "root-dev-wrapper"
+        },
+        {
+          "pid": 31300,
+          "parentPid": 16912,
+          "role": "root-dev-wrapper"
+        },
+        {
+          "pid": 30840,
+          "parentPid": 31300,
+          "role": "owned-child"
+        },
+        {
+          "pid": 38948,
+          "parentPid": 31300,
+          "role": "owned-child"
+        },
+        {
+          "pid": 35808,
+          "parentPid": 38948,
+          "role": "root-worker-wrapper"
+        },
+        {
+          "pid": 44848,
+          "parentPid": 35808,
+          "role": "root-worker-wrapper"
+        },
+        {
+          "pid": 40720,
+          "parentPid": 30840,
+          "role": "next"
+        },
+        {
+          "pid": 26476,
+          "parentPid": 40720,
+          "role": "next"
+        },
+        {
+          "pid": 46744,
+          "parentPid": 44848,
+          "role": "owned-child"
+        },
+        {
+          "pid": 38816,
+          "parentPid": 46744,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 29412,
+          "parentPid": 38816,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 38060,
+          "parentPid": 29412,
+          "role": "queue-worker-entry"
+        },
+        {
+          "pid": 2636,
+          "parentPid": 26476,
+          "role": "next"
+        }
+      ],
+      "listeners": [
+        2636
+      ]
+    },
+    {
+      "check": "forbidden_click_conversion",
+      "tokenCount": 0,
+      "bannedKeyCounts": {
+        "confidence": 0,
+        "urgency": 0,
+        "sentiment": 0,
+        "summary": 0,
+        "score": 0,
+        "tenantId": 0,
+        "reasonDetail": 0,
+        "decision": 0,
+        "usage": 0,
+        "pipelineVersion": 0
+      },
+      "conversationId": "efa50c74-0319-452a-9a89-cc8285ed1abb",
+      "doneData": {
+        "conversationId": "efa50c74-0319-452a-9a89-cc8285ed1abb",
+        "messageId": "ea2f72fc-6f43-4bfb-a986-014b666c0b24"
+      },
+      "doneTicketId": null,
+      "clickedTicketId": "865259a6-7661-4952-8d8b-d291dc55a1c6",
+      "conversionStatuses": [
+        200,
+        201
+      ],
+      "ticketCount": 1,
+      "workerJobs": 0,
+      "escalationReason": "forbidden_category",
+      "noticeCode": "ESCALATED"
+    },
+    {
+      "check": "approval_auto_conversion",
+      "conversationId": "12a8c6de-ab31-4737-ae3c-9a3baaf6b66a",
+      "doneData": {
+        "conversationId": "12a8c6de-ab31-4737-ae3c-9a3baaf6b66a",
+        "messageId": "00098474-0a51-4717-bdb4-0b1e6264eda2",
+        "ticketId": "fab519ce-b72c-4e60-a696-69f08b66a966"
+      },
+      "doneTicketId": "fab519ce-b72c-4e60-a696-69f08b66a966",
+      "duplicateTicketId": "fab519ce-b72c-4e60-a696-69f08b66a966",
+      "ticketCount": 1,
+      "workerJobs": 0,
+      "draftId": "6229b010-312b-42b8-b916-b6cf9db3d895",
+      "draftConversationRetained": true,
+      "escalationReason": "approval_mode",
+      "noticeCode": "APPROVAL_REQUIRED",
+      "tokenCount": 0
+    },
+    {
+      "check": "real_heartbeat_comment",
+      "configuredDefaultMs": 15000,
+      "observedElapsedMs": 15038,
+      "comment": ": keep-alive",
+      "parserIgnoresComment": true
+    },
+    {
+      "check": "staff_public_sources_example",
+      "messageId": "e6866784-7d9f-4418-aad8-8e928b589983",
+      "authorType": "agent",
+      "visibility": "public",
+      "sources": [
+        {
+          "id": "21aaac6a-5ece-5b2d-9efa-790127876de6",
+          "title": "PC 최소·권장 사양",
+          "excerpt": "최소 사양은 64비트 운영체제, 4코어 프로세서, 메모리 8GB, 그래픽 메모리 2GB입니다. 권장 사양은 6코어 프로세서, 메모리 16GB, 그래픽 메모리 6GB이며 저장 공간은 40GB를 확보해 주세요. 설치 전에 운영체제와 그래픽 드라이버를 최신 상태로 확인해 주세요. 도움말"
+        },
+        {
+          "id": "558ffee6-1bd4-5592-921d-782a73d17ada",
+          "title": "모바일 설치와 저장 공간",
+          "excerpt": "모바일 버전은 운영체제 12 이상과 메모리 4GB 이상을 지원합니다. 최초 설치와 추가 리소스를 위해 여유 공간 12GB를 확보해 주세요. 다운로드 중에는 안정적인 무선 네트워크와 전원 연결을 권장합니다. 도움말"
+        },
+        {
+          "id": "1de20302-0692-54d4-a6d8-aceb6521ea52",
+          "title": "환불 접수 절차",
+          "excerpt": "환불 요청은 상담원이 구매 경로와 사용 여부를 확인한 뒤 안내합니다. 문의글에 주문 번호, 상품명, 구매 시각과 요청 사유를 적어 주세요. 이 안내만으로 환불이나 결제 취소가 승인되지는 않으며 처리 가능 여부는 개별 확인이 필요합니다. 도움말"
+        }
+      ]
+    },
+    {
+      "check": "same_run_abort_before_commit",
+      "conversationId": "11d223f2-9345-4eb3-a993-96c71427359d",
+      "customer": 1,
+      "assistant": 0,
+      "runs": 0,
+      "drafts": 0
+    },
+    {
+      "check": "same_run_abort_after_commit",
+      "conversationId": "35afeced-efbc-494c-91e6-7e2cd9a924a1",
+      "committed": {
+        "customer": 1,
+        "assistant": 1,
+        "runs": 1,
+        "drafts": 0
+      },
+      "originalIdsRetained": true,
+      "duplicateAssistant": 0,
+      "followUpStatus": 200
+    },
+    {
+      "phase": "SSE_ALL_ASSERTS_PASSED",
+      "priorPassesUsed": false
+    },
+    {
+      "phase": "dev_exit",
+      "pid": 4124,
+      "exit": 1,
+      "signal": null,
+      "mechanism": "owned tree cleanup, not OS SIGTERM handler proof"
+    },
+    {
+      "phase": "runtime_cleanup",
+      "survivors": [],
+      "listeners": []
+    },
+    {
+      "phase": "database_cleanup",
+      "name": "support_sse584_1792625629047_e2e",
+      "activeConnections": 0,
+      "droppedOnlyOwned": true
+    }
+  ]
+}

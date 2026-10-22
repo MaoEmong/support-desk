@@ -1,0 +1,51 @@
+# gates final 2026-10-22T09:03:21.4157335+09:00
+## npx tsc --noEmit --incremental false (apps/web)
+start=2026-10-22T09:03:23.4888597+09:00 exit=0 time=8s
+
+## npx eslint src e2e (apps/web)
+start=2026-10-22T09:03:31.4816943+09:00 exit=0 time=3.7s
+
+## pnpm --filter @support/web build (root)
+start=2026-10-22T09:03:35.2110749+09:00 exit=0 time=29.6s
+├ ƒ /t/[slug]/admin/tickets/[id]         6.78 kB         217 kB
+├ ƒ /t/[slug]/login                      2.35 kB         236 kB
+├ ƒ /t/[slug]/signup                     1.97 kB         235 kB
+├ ƒ /t/[slug]/tickets                    1.86 kB         162 kB
+├ ƒ /t/[slug]/tickets/[id]               5.36 kB         229 kB
+└ ƒ /t/[slug]/tickets/new                7.19 kB         213 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/6ef561e2-0c1a9dfbaf537b77.js  54.2 kB
+  ├ chunks/752-c15050267a3c6f27.js       46.4 kB
+  └ other shared chunks (total)             2 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+## npx playwright test (apps/web, config reporters: list+json+html)
+start=2026-10-22T09:04:04.8254157+09:00 exit=0 time=377.1s
+  ok 39 [mobile] › e2e\conflict.spec.ts:10:1 › 상태 변경 동시 수정 → 오래된 화면에서 409 안내 (3.4s)
+  ok 40 [mobile] › e2e\customer-flow.spec.ts:7:1 › 고객 핵심 흐름: 가입 → 문의 → 상담원 답변 폴링 반영 → 해결 확인 (11.3s)
+  ok 41 [mobile] › e2e\isolation.spec.ts:5:1 › 다른 고객 티켓 URL 직접 접근 → 404 화면 (2.9s)
+  ok 42 [mobile] › e2e\isolation.spec.ts:25:1 › 교차 테넌트: pixelforge 세션으로 mailpulse 접근 차단, pixelforge 계정으로 mailpulse 로그인 실패 (4.2s)
+  ok 43 [mobile] › e2e\review-fixes.spec.ts:7:1 › KB 만들기 다이얼로그: Esc·저장 후 트리거로 포커스 복귀, 결과 안내 role=status (2.5s)
+  ok 44 [mobile] › e2e\review-fixes.spec.ts:43:1 › 정상 로그아웃: 로그인 화면으로 이동, 실패 안내 없음, 보호 화면 재접근 시 로그인 (8.1s)
+  ok 45 [mobile] › e2e\review-fixes.spec.ts:67:1 › 초안 없는 티켓의 상담원 상세: h1 1개, 오류·409 없음 (1.9s)
+  ok 46 [mobile] › e2e\roles.spec.ts:7:1 › 고객은 대시보드 접근 시 403 (1.2s)
+  ok 47 [mobile] › e2e\roles.spec.ts:16:1 › 상담원: 설정 메뉴 없음, 설정 라우트 403, Mock 배지 표시 (2.6s)
+  ok 48 [mobile] › e2e\roles.spec.ts:30:1 › 테넌트 관리자: 설정 메뉴로 설정 화면 진입 (1.9s)
+  ok 49 [mobile] › e2e\roles.spec.ts:43:1 › 로그인 폼: 역할별 첫 화면(고객 → 내 문의, 상담원 → 대시보드) (4.4s)
+  ok 50 [mobile] › e2e\roles.spec.ts:59:1 › 미로그인으로 내 문의 접근 → 로그인 화면 (1.8s)
+  ok 51 [mobile] › e2e\roles.spec.ts:68:1 › 플랫폼 관리자: 테넌트 2개와 집계만, 티켓 화면·본문 API 없음 (2.7s)
+  ok 52 [mobile] › e2e\stage2-integration.spec.ts:104:3 › 2단계 실제 AI·관리자 통합 › pixelforge FAQ 티켓 → 자동답변·근거 → 고객 해결 확인 (7.2s)
+  ok 53 [mobile] › e2e\stage2-integration.spec.ts:121:3 › 2단계 실제 AI·관리자 통합 › 환불 이관 → 큐 사유·초안 편집·승인 → 고객 반영 및 실제 초안 409 (11.3s)
+  ok 54 [mobile] › e2e\stage2-integration.spec.ts:178:5 › 2단계 실제 AI·관리자 통합 › 챗봇 chat_faq: 실제 SSE·출력 정책·전환 멱등성 (2.2s)
+  ok 55 [mobile] › e2e\stage2-integration.spec.ts:178:5 › 2단계 실제 AI·관리자 통합 › 챗봇 chat_hacking: 실제 SSE·출력 정책·전환 멱등성 (3.1s)
+  ok 56 [mobile] › e2e\stage2-integration.spec.ts:239:3 › 2단계 실제 AI·관리자 통합 › 상담원 추가·단회 비밀번호·중복 이메일·비활성 세션·관리 경로 권한 (14.1s)
+  ok 57 [mobile] › e2e\stage2-integration.spec.ts:300:3 › 2단계 실제 AI·관리자 통합 › mailpulse FAQ는 해당 테넌트의 실제 AI 답변과 근거를 표시 (6.9s)
+  ok 58 [mobile] › e2e\stage2-integration.spec.ts:312:3 › 2단계 실제 AI·관리자 통합 › KPI: 독립된 자동해결·이관 티켓 생성 후 두 비율과 분류 분포가 양수 (11.2s)
+  ok 59 [mobile] › e2e\stage2-integration.spec.ts:351:5 › 2단계 실제 AI·관리자 통합 › settings writers › 승인 모드: 접수 전 활성화 → 비공개 초안 → 승인 후 공개 → 설정 복구 (16.4s)
+  ok 60 [mobile] › e2e\stage2-integration.spec.ts:390:5 › 2단계 실제 AI·관리자 통합 › settings writers › 승인 모드 챗봇: done.ticketId 자동 접수 → 위젯 접수됨+링크·전환 버튼 없음 → 티켓 1건 → 복원 유지 → 설정 복구 (2.8s)
+  ok 61 [mobile] › e2e\stage2-integration.spec.ts:449:5 › 2단계 실제 AI·관리자 통합 › settings writers › 임계값 0.85: 경계 문의는 이관하고 더 높은 신뢰도 FAQ는 자동답변 → 0.7 복구 (8.8s)
+
+  61 passed (6.3m)

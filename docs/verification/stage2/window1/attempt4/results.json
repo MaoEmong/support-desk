@@ -1,0 +1,66 @@
+{
+  "database": "support_window1_1792623302152_e2e",
+  "records": [
+    {
+      "phase": "new_owned_database",
+      "name": "support_window1_1792623302152_e2e",
+      "sharedDatabaseTouched": false
+    },
+    {
+      "phase": "scoped_tests_not_repeated",
+      "priorEvidence": "attempt2/scoped-tests.log",
+      "priorPass": 45,
+      "currentPassClaim": false
+    },
+    {
+      "phase": "real_bootstrap_queue_claim",
+      "result": "pass"
+    },
+    {
+      "phase": "root_dev_ready",
+      "port": 5107,
+      "pid": 3172,
+      "database": "support_window1_1792623302152_e2e"
+    },
+    {
+      "caseKey": "faq_install",
+      "override": {},
+      "autoAnswerCount": 0,
+      "jobId": "dc7c9c26-826e-45d4-9a26-ba570966a427",
+      "ticketId": "2b5221f2-b158-4d17-9466-5e2759f6eaef",
+      "decision": "auto_answer",
+      "reason": "confident_kb_match",
+      "category": "install",
+      "confidence": 0.865,
+      "publicReplies": 1
+    },
+    {
+      "caseKey": "follow_up_after_auto_answer",
+      "ticketId": "2b5221f2-b158-4d17-9466-5e2759f6eaef",
+      "publicReplies": 1,
+      "escalated": true
+    },
+    {
+      "caseKey": "faq_install",
+      "override": {
+        "approvalMode": true
+      },
+      "autoAnswerCount": 0,
+      "ticketId": "7d98a7ee-9644-40ce-b542-019d16e19dac",
+      "draftCount": 1,
+      "customerDraftVisible": false
+    },
+    {
+      "process": "dev",
+      "pid": 3172,
+      "exit": 1,
+      "signal": null
+    },
+    {
+      "phase": "owned_database_cleanup",
+      "name": "support_window1_1792623302152_e2e",
+      "connections": 0,
+      "dropped": true
+    }
+  ]
+}

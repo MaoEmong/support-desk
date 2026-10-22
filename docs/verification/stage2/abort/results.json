@@ -1,0 +1,39 @@
+{
+  "database": "support_abort_1792623740375_e2e",
+  "results": [
+    {
+      "phase": "API_abort_targeted_tests",
+      "exit": 0,
+      "nonMatchingTests": "skipped by explicit name filter; not pass"
+    },
+    {
+      "boundary": "abort_before_commit",
+      "conversationId": "907341d6-002a-48fc-8cf1-dda4d106d49c",
+      "customer": 1,
+      "assistant": 0,
+      "runs": 0,
+      "drafts": 0,
+      "realHttp": true,
+      "realDbTransactionGate": true
+    },
+    {
+      "boundary": "abort_after_commit",
+      "conversationId": "f13042e6-4492-4c3e-a8cb-d66b6ac4c3b9",
+      "committed": {
+        "customer": 1,
+        "assistant": 1,
+        "runs": 1,
+        "drafts": 0
+      },
+      "originalMessageIdsPreserved": true,
+      "additionalDuplicateAssistant": 0,
+      "sameConversationFollowUpStatus": 200,
+      "realHttp": true
+    },
+    {
+      "cleanup": "support_abort_1792623740375_e2e",
+      "droppedOwnedDatabase": true,
+      "sharedDatabaseTouched": false
+    }
+  ]
+}

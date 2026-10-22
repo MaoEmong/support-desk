@@ -1,0 +1,37 @@
+import { MockProvider, TenantAISettingsSchema, type AIRunResult, type PipelineDeps } from '@support/ai';
+
+export function realPipelineDeps(tenantId: string, options: { approvalMode?: boolean; autoAnswerCount?: number; foreignSource?: boolean } = {}): PipelineDeps {
+  const settings = TenantAISettingsSchema.parse({
+    threshold: 0.1, approvalMode: options.approvalMode ?? false, forbiddenCategories: [],
+    categories: [
+      { id: 'install', label: '설치', keywords: ['설치', '사양', '업데이트'] },
+      { id: 'other', label: '기타', keywords: [] },
+    ],
+  });
+  return {
+    provider: new MockProvider(),
+    settings: { getTenantAISettings: async id => id === tenantId ? settings : null },
+    inquiries: { getInquiryContext: async input => input.tenantId === tenantId ? {
+      message: { id: input.messageId, body: '설치 사양 업데이트 방법을 알려주세요' }, autoAnswerCount: options.autoAnswerCount ?? 0,
+    } : null },
+    kb: { search: async () => [{ score: 1, raw: 1, article: {
+      id: 'kb-install', tenantId: options.foreignSource ? 'another-tenant' : tenantId,
+      category: 'install', title: '설치 방법', question: '설치 사양 업데이트',
+      body: '설치 프로그램을 내려받아 실행한 뒤 업데이트를 확인하세요.', tags: ['설치'],
+    } }] },
+  };
+}
+
+export function providerResult(tenantId: string, ticketId: string, messageId: string): AIRunResult {
+  const sources = [{ tenantId, kbArticleId: 'kb-1', title: 'FAQ', excerpt: 'FAQ 안내', score: 1 }];
+  return {
+    tenantId, ticketId, messageId, pipelineVersion: 'ai-pipeline@1',
+    decision: 'auto_answer', reason: 'confident_kb_match', reasonDetail: '연락처 user@example.com',
+    classification: { category: 'install', urgency: 'low', sentiment: 'neutral', confidence: 0.9 },
+    confidence: { final: 0.9, llm: 0.9, retrieval: 1, rule: 1 },
+    sources, draft: { body: 'FAQ 안내', sources, model: 'mock', customerVisible: true },
+    usage: [{ provider: 'mock', model: 'mock', inputTokens: 2, outputTokens: 3 }],
+    timing: { classifyMs: 1, retrieveMs: 1, generateMs: 1, totalMs: 3 },
+    flags: { injectionSuspected: false, suspiciousLinks: [], removedOutputLinks: [] }, error: null,
+  };
+}

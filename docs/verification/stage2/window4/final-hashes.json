@@ -1,0 +1,18 @@
+[
+  {
+    "Path": "apps\\web\\package.json",
+    "Hash": "B76CC2E59C8D76D28FDDA04A08EBDE61F1245D235BEF1FE26E3206B2B9AB1CCF"
+  },
+  {
+    "Path": "pnpm-lock.yaml",
+    "Hash": "FB16B4D71EBBA019BBFF0E3783B63326BCEC171D739F88E9FA5F2AB4B48A1BB5"
+  },
+  {
+    "Path": "docs\\verification\\stage2\\ai-eval.txt",
+    "Hash": "8A74993B7547BA575E36330E4CF7D66C46A5DF8261632B45ADCB1E22FE30D247"
+  },
+  {
+    "Path": "docs\\verification\\stage2\\ai-eval.run1.txt",
+    "Hash": "8825C0EDB19247A9D4606A8F64316CFF3918B6A17484E35B777C598E9315615C"
+  }
+]

@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+
+/*
+ * 디자인 토큰. 테넌트 브랜딩은 --brand / --brand-foreground만 바꾼다(TenantTheme가 주입).
+ * 기본 대비는 WCAG AA(본문 4.5:1) 이상이 되도록 고른 값이다.
+ */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #475569;
+  --border: #cbd5e1;
+  /* 입력 컨트롤 경계(비텍스트 대비 3:1 이상, 흰 배경 대비 약 4.8:1). 장식 경계는 --border */
+  --input-border: #64748b;
+  --ring: #2563eb;
+  --brand: #4338ca;
+  --brand-foreground: #ffffff;
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+  --warning: #92400e;
+  --warning-soft: #fffbeb;
+  --success: #166534;
+  --success-soft: #f0fdf4;
+  --info: #1e40af;
+  --info-soft: #eff6ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input-border: var(--input-border);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --font-sans: 'Pretendard', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* 마크다운 본문(SafeMarkdown) */
+.prose-sd {
+  overflow-wrap: anywhere;
+  line-height: 1.65;
+}
+.prose-sd p + p,
+.prose-sd ul,
+.prose-sd ol,
+.prose-sd pre,
+.prose-sd blockquote {
+  margin-top: 0.5rem;
+}
+.prose-sd ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.prose-sd ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+.prose-sd a {
+  color: var(--info);
+  text-decoration: underline;
+}
+.prose-sd code {
+  background: var(--muted);
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+  font-size: 0.875em;
+}
+.prose-sd pre {
+  background: var(--muted);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  overflow-x: auto;
+}
+/* 브랜드 배경 말풍선 안에서도 muted 배경 위 코드 글자가 대비를 유지하도록 */
+.prose-sd code,
+.prose-sd pre {
+  color: var(--foreground);
+}
+.prose-sd blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 0.75rem;
+  color: var(--muted-foreground);
+}
